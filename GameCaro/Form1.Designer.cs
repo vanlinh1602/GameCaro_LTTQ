@@ -104,6 +104,7 @@ namespace GameCaro
             this.TxB_ID.Name = "TxB_ID";
             this.TxB_ID.Size = new System.Drawing.Size(169, 27);
             this.TxB_ID.TabIndex = 4;
+            this.TxB_ID.Text = "192.168.140";
             // 
             // button1
             // 
