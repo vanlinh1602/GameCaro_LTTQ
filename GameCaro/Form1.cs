@@ -12,36 +12,14 @@ namespace GameCaro
 {
     public partial class Form1 : Form
     {
+        ChessBoardManager ChessBoard;
         public Form1()
         {
+            Icon =  new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
-            DrawChessBoard();
+            ChessBoard = new ChessBoardManager(Chess_Board);
+            ChessBoard.DrawChessBoard();
         }
 
-        void DrawChessBoard()
-        {
-            Button oldBnt = new Button()
-            {
-                Width = 0,
-                Location = new Point(0, 0)
-            };
-            for (int i = 0; i < ChessBoardManager.Height; i++)
-            {
-                for (int j = 0; j < ChessBoardManager.Width; j++)
-                {
-                    Button bnt = new Button()
-                    {
-                        Height = ChessBoardManager.Chess_Height,
-                        Width = ChessBoardManager.Chess_Width,
-                        Location = new Point(oldBnt.Location.X + oldBnt.Width, oldBnt.Location.Y)
-                    };
-                    Chess_Board.Controls.Add(bnt);
-                    oldBnt = bnt;
-                }
-                oldBnt.Location = new Point(0, oldBnt.Location.Y + ChessBoardManager.Chess_Height);
-                oldBnt.Height = 0;
-                oldBnt.Width = 0;
-            }
-        }
     }
 }

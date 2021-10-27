@@ -49,7 +49,7 @@ namespace GameCaro
             // 
             this.Chess_Board.Location = new System.Drawing.Point(12, 12);
             this.Chess_Board.Name = "Chess_Board";
-            this.Chess_Board.Size = new System.Drawing.Size(776, 536);
+            this.Chess_Board.Size = new System.Drawing.Size(791, 552);
             this.Chess_Board.TabIndex = 0;
             // 
             // panel2
@@ -57,9 +57,9 @@ namespace GameCaro
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(794, 12);
+            this.panel2.Location = new System.Drawing.Point(809, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(307, 269);
+            this.panel2.Size = new System.Drawing.Size(342, 282);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -68,7 +68,7 @@ namespace GameCaro
             this.pictureBox1.Image = global::GameCaro.Properties.Resources.background2;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(301, 263);
+            this.pictureBox1.Size = new System.Drawing.Size(336, 276);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -83,9 +83,9 @@ namespace GameCaro
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.txBName);
             this.panel3.Controls.Add(this.PrsBTime);
-            this.panel3.Location = new System.Drawing.Point(794, 287);
+            this.panel3.Location = new System.Drawing.Point(812, 300);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(307, 261);
+            this.panel3.Size = new System.Drawing.Size(339, 264);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -120,7 +120,7 @@ namespace GameCaro
             this.pictureBox2.Image = global::GameCaro.Properties.Resources.avatar;
             this.pictureBox2.Location = new System.Drawing.Point(178, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(126, 102);
+            this.pictureBox2.Size = new System.Drawing.Size(158, 133);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -144,7 +144,7 @@ namespace GameCaro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 576);
+            this.ClientSize = new System.Drawing.Size(1167, 589);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Chess_Board);

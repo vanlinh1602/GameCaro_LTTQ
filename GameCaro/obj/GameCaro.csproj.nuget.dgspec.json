@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\GameCaro\\GameCaro\\GameCaro.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\GameCaro\\GameCaro\\GameCaro.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GameCaro\\GameCaro\\GameCaro.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj",
         "projectName": "GameCaro",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\GameCaro\\GameCaro\\GameCaro.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\GameCaro\\GameCaro\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
