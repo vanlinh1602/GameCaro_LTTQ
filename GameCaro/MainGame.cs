@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace GameCaro
 {
-    public partial class Form1 : Form
+    public partial class MainGame : Form
     {
         ChessBoardManager ChessBoard;
-        public Form1()
+        public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
@@ -22,7 +22,6 @@ namespace GameCaro
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             NewGame();
-
         }
 
         private void ChessBoard_PlayerMark(object sender, EventArgs e)
@@ -54,17 +53,14 @@ namespace GameCaro
             MessageBox.Show("End Game! Good job Bro");
             Chess_Board.Enabled = false;
         }
-
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
         }
-
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Quit();
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Are you sure want to quit?", "Warring", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -81,6 +77,11 @@ namespace GameCaro
             CountTime.Stop();
             TimeDown.Value = 0;
             ChessBoard.DrawChessBoard();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChessBoard.Undo();
         }
     }
 }

@@ -33,3 +33,39 @@ C:\Users\Admin\Desktop\New folder (2)\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.
 C:\Users\Admin\Desktop\New folder (2)\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Users\Admin\Desktop\New folder (2)\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
 C:\Users\Admin\Desktop\New folder (2)\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Form2.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.exe
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.deps.json
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.json
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Form1.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Form2.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Properties.Resources.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.exe
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.deps.json
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.json
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Form2.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.MainGame.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Properties.Resources.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfo.cs
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache

@@ -9,7 +9,7 @@ namespace GameCaro
     class GameManager
     {
         public static Form2 ControlStart;
-        public static Form1 GameDisplay;
+        public static MainGame GameDisplay;
         public static bool CheckOpen = false;
         public static int Timer_Interval = 100;
         public static int Process_Step = 100;
@@ -21,13 +21,13 @@ namespace GameCaro
             MessageBox.Show("End Game! Good job Bro");
         }
 
-        internal static void UpdateNewTime(ref Form1 form1)
+        internal static void UpdateNewTime(ref MainGame form1)
         {
             form1.TimeDown.Value = 0;
             form1.CountTime.Start();
         }
 
-        public static void SetUpTimeDown(ref Form1 form1)
+        public static void SetUpTimeDown(ref MainGame form1)
         {
             form1.TimeDown.Step = GameManager.Process_Step;
             form1.TimeDown.Maximum = GameManager.Process_Maximun;

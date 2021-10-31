@@ -42,11 +42,14 @@ namespace GameCaro
 
         public Panel Chess_Board { get => chess_Board; set => chess_Board = value; }
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
+        public Stack<Point> StackUndo { get => stackUndo; set => stackUndo = value; }
+
         List<Player> players = new List<Player>()
         {
             new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\P1.jpg")),
             new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\P2.jpg"))
         };
+        private Stack<Point> stackUndo = new Stack<Point>();
         #endregion
 
         #region Initialize
@@ -91,6 +94,17 @@ namespace GameCaro
                 oldBnt.Width = 0;
             }
         }
+
+        internal void Undo()
+        {
+            if (StackUndo.Count != 0) 
+            {
+                Point point = StackUndo.Pop();
+                matrix[point.X][point.Y].BackgroundImage = null;
+                ChangePlayer();
+            }
+        }
+
         private void ChangePlayer()
         {
             Player.turn = Player.turn == 1 ? 0 : 1;
@@ -101,6 +115,9 @@ namespace GameCaro
                 return;
             bnt.BackgroundImage = players[Player.turn].Avatar;
             ChangePlayer();
+            int x = int.Parse(bnt.Tag.ToString());
+            int y = matrix[x].IndexOf(bnt);
+            StackUndo.Push(new Point(x,y));
             if (playerMark != null)
             {
                 playerMark(this, new EventArgs());
@@ -111,7 +128,6 @@ namespace GameCaro
             Button bnt = sender as Button;
             ChangeImageAndChangePlayer(bnt);
             CheckEndGame(bnt);
-            
         }
         private void CheckEndGame(Button bnt)
         {
@@ -245,7 +261,5 @@ namespace GameCaro
             return countLeft + countRight == 5 ? true : false;
         }
         #endregion
-
-
     }
 }
