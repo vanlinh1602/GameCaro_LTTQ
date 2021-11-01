@@ -1,7 +1,7 @@
 ﻿
 namespace GameCaro
 {
-    partial class Form2
+    partial class StartUp
     {
         /// <summary>
         /// Required designer variable.

@@ -35,7 +35,7 @@ namespace GameCaro
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxB_ID = new System.Windows.Forms.TextBox();
+            this.TxB_IP = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txBName = new System.Windows.Forms.TextBox();
@@ -86,7 +86,7 @@ namespace GameCaro
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.TxB_ID);
+            this.panel3.Controls.Add(this.TxB_IP);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.txBName);
@@ -106,13 +106,13 @@ namespace GameCaro
             this.label1.TabIndex = 5;
             this.label1.Text = "Good Luck";
             // 
-            // TxB_ID
+            // TxB_IP
             // 
-            this.TxB_ID.Location = new System.Drawing.Point(3, 71);
-            this.TxB_ID.Name = "TxB_ID";
-            this.TxB_ID.Size = new System.Drawing.Size(169, 27);
-            this.TxB_ID.TabIndex = 4;
-            this.TxB_ID.Text = "192.168.140";
+            this.TxB_IP.Location = new System.Drawing.Point(3, 71);
+            this.TxB_IP.Name = "TxB_IP";
+            this.TxB_IP.Size = new System.Drawing.Size(169, 27);
+            this.TxB_IP.TabIndex = 4;
+            this.TxB_IP.Text = "192.168.140";
             // 
             // button1
             // 
@@ -122,6 +122,7 @@ namespace GameCaro
             this.button1.TabIndex = 3;
             this.button1.Text = "Connect";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox2
             // 
@@ -139,7 +140,6 @@ namespace GameCaro
             this.txBName.Name = "txBName";
             this.txBName.Size = new System.Drawing.Size(169, 27);
             this.txBName.TabIndex = 1;
-            this.txBName.Text = "Linh Nguyễn";
             // 
             // TimeDown
             // 
@@ -178,7 +178,7 @@ namespace GameCaro
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -186,7 +186,7 @@ namespace GameCaro
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -194,7 +194,7 @@ namespace GameCaro
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -211,6 +211,7 @@ namespace GameCaro
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameCaro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Shown += new System.EventHandler(this.MainGame_Shown);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -227,7 +228,7 @@ namespace GameCaro
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox TxB_ID;
+        private System.Windows.Forms.TextBox TxB_IP;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txBName;

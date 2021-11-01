@@ -18,7 +18,7 @@ namespace GameCaro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainGame gameDisplay = new MainGame();
-            Form2 controlStart = new Form2();
+            StartUp controlStart = new StartUp();
             GameManager.ControlStart = controlStart;
             GameManager.GameDisplay = gameDisplay;
             Application.Run(controlStart);

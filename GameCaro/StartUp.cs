@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace GameCaro
 {
-    public partial class Form2 : Form
+    public partial class StartUp : Form
     {
-        public Form2()
+        public StartUp()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();

@@ -8,7 +8,6 @@
 -- Chưa cập nhập
 	
 	Connect 2 người chơi
-	Thắng thua
 	Multi Chat
 	Giao diện thắng thua
 	Hình ảnh cổ vũ
