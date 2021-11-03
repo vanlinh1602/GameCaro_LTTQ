@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
       "projectName": "GameCaro",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\GameCaro.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\GameCaro\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

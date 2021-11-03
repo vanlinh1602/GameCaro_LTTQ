@@ -1,7 +1,7 @@
 ﻿
 namespace GameCaro
 {
-    partial class Form2
+    partial class StartUp
     {
         /// <summary>
         /// Required designer variable.
@@ -97,6 +97,7 @@ namespace GameCaro
             // 
             // txBName
             // 
+            this.txBName.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.txBName.Location = new System.Drawing.Point(143, 349);
             this.txBName.Name = "txBName";
             this.txBName.Size = new System.Drawing.Size(151, 27);
@@ -120,6 +121,7 @@ namespace GameCaro
             this.ClientSize = new System.Drawing.Size(388, 489);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WibuCaro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -135,7 +137,7 @@ namespace GameCaro
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CbOption;
-        private System.Windows.Forms.TextBox txBName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txBName;
     }
 }
