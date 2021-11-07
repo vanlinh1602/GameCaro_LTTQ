@@ -15,7 +15,7 @@ namespace GameCaro
 
         #region Sever
         Socket sever;
-        public void CreateSever()
+        public void CreateServer()
         {
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
             sever = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -32,7 +32,7 @@ namespace GameCaro
 
         #region Client
         Socket client;
-        public bool ConnectSever()
+        public bool ConnectServer()
         {
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -51,7 +51,7 @@ namespace GameCaro
 
         #region Both
         public int PORT = 9999;
-        public string IP = "127.0.0.1";
+        public string IP = "";
         public int Leght = 1024;
         public bool Send(object data)
         {

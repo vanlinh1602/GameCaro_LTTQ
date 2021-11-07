@@ -112,7 +112,6 @@ namespace GameCaro
             this.TxB_IP.Name = "TxB_IP";
             this.TxB_IP.Size = new System.Drawing.Size(169, 27);
             this.TxB_IP.TabIndex = 4;
-            this.TxB_IP.Text = "192.168.140";
             // 
             // button1
             // 

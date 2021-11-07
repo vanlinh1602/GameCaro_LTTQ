@@ -27,6 +27,7 @@ namespace GameCaro
             socket = new SocketManager();
             NewGame();
         }
+        #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EventArgs e)
         {
             TimeDown.Value = 0;
@@ -86,56 +87,52 @@ namespace GameCaro
                 e.Cancel = true;
             }
         }
+        #endregion
 
+        #region Socket
         private void MainGame_Shown(object sender, EventArgs e)
         {
             TxB_IP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-            if (TxB_IP.Text == "")
+            if (string.IsNullOrEmpty(TxB_IP.Text))
             {
                 TxB_IP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             socket.IP = TxB_IP.Text;
-            if (!socket.ConnectSever())
+            if (!socket.ConnectServer())
             {
-                socket.ConnectSever();
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
+                socket.CreateServer();
             }
             else
             {
-                Thread listenThread = new Thread(() =>
-                {
-                    Listen();
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-                socket.Send("Đây là thông tin từ client");
+                Listen();
+                socket.Send("Thông tin từ Client");
             }
         }
         private void Listen()
         {
-            string data = (string)socket.Receive();
-            MessageBox.Show(data);
+            Thread listenThread = new Thread(() =>
+            {
+                try
+                {
+                    string data = (string)socket.Receive();
+                    HandleData(data);
+                }
+                catch { }
+            });
+            listenThread.IsBackground = true;
+            listenThread.Start();
         }
+        private void HandleData(string data)
+        {
+            MessageBox.Show(data);
+            Listen();
+        }
+        #endregion
+
+
+
     }
 }

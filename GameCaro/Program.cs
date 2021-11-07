@@ -17,15 +17,15 @@ namespace GameCaro
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MainGame gameDisplay = new MainGame();
-            StartUp controlStart = new StartUp();
-            GameManager.ControlStart = controlStart;
-            GameManager.GameDisplay = gameDisplay;
-            Application.Run(controlStart);
-            if (GameManager.CheckOpen)
-            {
-                Application.Run(gameDisplay);
-            }
+            //MainGame gameDisplay = new MainGame();
+            //StartUp controlStart = new StartUp();
+            //GameManager.ControlStart = controlStart;
+            //GameManager.GameDisplay = gameDisplay;
+            Application.Run(new MainGame());
+            //if (GameManager.CheckOpen)
+            //{
+            //    Application.Run(gameDisplay);
+            //}
         }
     }
 }
