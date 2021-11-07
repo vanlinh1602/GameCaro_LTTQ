@@ -14,12 +14,12 @@ namespace GameCaro
         public string Message { get => message; set => message = value; }
         string message;
 
-        public SocketData(int command, Point location, string message)
-        {
-            this.command = command;
-            this.location = location;
-            this.message = message;
-        }
+        //public SocketData(int command, Point location, string message)
+        //{
+        //    this.command = command;
+        //    this.location = location;
+        //    this.message = message;
+        //}
         public enum Socket_Commmad
         {
             SEND_POINT,
