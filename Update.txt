@@ -11,4 +11,6 @@
 	Multi Chat
 	Giao diện thắng thua
 	Hình ảnh cổ vũ
+
+Push lên bằng VS nè!!!!
 	
