@@ -27,11 +27,17 @@ namespace GameCaro
             socket = new SocketManager();
             NewGame();
         }
-        #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        #region ControlsInGame
+        private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
         {
             TimeDown.Value = 0;
             CountTime.Start();
+            socket.Send(new SocketData((int)Socket_Commmad.SEND_POINT, e.Location, ""));
+            Listen();
         }
         private void ChessBoard_EndGame(object sender, EventArgs e)
         {
@@ -108,7 +114,6 @@ namespace GameCaro
             else
             {
                 Listen();
-                socket.Send("Thông tin từ Client");
             }
         }
         private void Listen()
@@ -117,7 +122,7 @@ namespace GameCaro
             {
                 try
                 {
-                    string data = (string)socket.Receive();
+                    SocketData data = (SocketData)socket.Receive();
                     HandleData(data);
                 }
                 catch { }
@@ -125,9 +130,24 @@ namespace GameCaro
             listenThread.IsBackground = true;
             listenThread.Start();
         }
-        private void HandleData(string data)
+        private void HandleData(SocketData data)
         {
-            MessageBox.Show(data);
+            switch (data.Command)
+            {
+                case (int)Socket_Commmad.SEND_POINT:
+                    ChessBoard.PlayerMarkClick(data.Location);
+                    break;
+                case (int)Socket_Commmad.NEW_GAME:
+                    break;
+                case (int)Socket_Commmad.END_GAME:
+                    break;
+                case (int)Socket_Commmad.NOTIFY:
+                    break;
+                case (int)Socket_Commmad.QUIT:
+                    break;
+                case (int)Socket_Commmad.UNDO:
+                    break;
+            }
             Listen();
         }
         #endregion

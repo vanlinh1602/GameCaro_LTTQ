@@ -15,9 +15,9 @@ namespace GameCaro
         public static int Chess_Height = 30;
         private Panel chess_Board = new Panel();
         List<List<Button>> matrix;
-        event EventHandler playerMark;
+        event EventHandler<EvenSentPoint> playerMark;
         event EventHandler endGame;
-        public event EventHandler PlayerMark
+        public event EventHandler<EvenSentPoint> PlayerMark
         {
             add
             {
@@ -120,7 +120,7 @@ namespace GameCaro
             StackUndo.Push(new Point(x,y));
             if (playerMark != null)
             {
-                playerMark(this, new EventArgs());
+                playerMark(this, new EvenSentPoint(new Point(x,y)));
             }
         }
         private void Bnt_Click(object sender, EventArgs e)
@@ -128,6 +128,18 @@ namespace GameCaro
             Button bnt = sender as Button;
             ChangeImageAndChangePlayer(bnt);
             CheckEndGame(bnt);
+        }
+        public void PlayerMarkClick(Point point)
+        {
+            Button btn = matrix[point.X][point.Y];
+            if (btn.BackgroundImage != null)
+                return;
+            btn.BackgroundImage = players[Player.turn].Avatar;
+            ChangePlayer();
+            int x = int.Parse(btn.Tag.ToString());
+            int y = matrix[x].IndexOf(btn);
+            StackUndo.Push(new Point(x, y));
+            CheckEndGame(btn);
         }
         private void CheckEndGame(Button bnt)
         {
@@ -261,5 +273,16 @@ namespace GameCaro
             return countLeft + countRight == 5 ? true : false;
         }
         #endregion
+    }
+    public class EvenSentPoint : EventArgs
+    {
+        private Point location = new Point();
+        public Point Location { get => location; set => location = value; }
+        public EvenSentPoint(Point location)
+        {
+            this.location = location;
+        }
+
+
     }
 }

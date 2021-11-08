@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Text;
 
 namespace GameCaro
-{
+{   [Serializable]
     class SocketData
     {
         private int command;
@@ -20,14 +20,15 @@ namespace GameCaro
             this.location = location;
             this.message = message;
         }
-        public enum Socket_Commmad
-        {
-            SEND_POINT,
-            NOTIFY,
-            NEW_GAME,
-            UNDO,
-            END_GAME,
-            QUIT
-        }
+        
+    }
+    public enum Socket_Commmad
+    {
+        SEND_POINT,
+        NOTIFY,
+        NEW_GAME,
+        UNDO,
+        END_GAME,
+        QUIT
     }
 }
