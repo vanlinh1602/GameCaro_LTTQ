@@ -29,6 +29,7 @@ namespace GameCaro
         NEW_GAME,
         UNDO,
         END_GAME,
-        QUIT
+        QUIT,
+        CHAT
     }
 }

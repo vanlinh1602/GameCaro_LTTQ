@@ -16,8 +16,9 @@ namespace GameCaro
     {
         ChessBoardManager ChessBoard;
         SocketManager socket;
+        Chat formChat;
         public MainGame()
-        {
+        {   
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
             ChessBoard = new ChessBoardManager(Chess_Board);
@@ -25,8 +26,17 @@ namespace GameCaro
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             socket = new SocketManager();
+            formChat = new Chat();
+            formChat.SendMessage += FormChat_SendMessage;
             NewGame();
         }
+
+        private void FormChat_SendMessage(object sender, EventSentMess e)
+        {
+            socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
+            Listen();
+        }
+
         private void ChessBoard_PlayerMark(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -147,12 +157,28 @@ namespace GameCaro
                     break;
                 case (int)Socket_Commmad.UNDO:
                     break;
+                case (int)Socket_Commmad.CHAT:
+                    formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
+                    break;
             }
             Listen();
         }
+
+        public static bool checkShown = false;
         #endregion
 
-
-
+        private void openChat_Click(object sender, EventArgs e)
+        {
+            if (!checkShown)
+            {
+                formChat.Show();
+                checkShown = true;
+            }
+            else
+            {
+                formChat.Hide();
+                checkShown = false;
+            }
+        }
     }
 }

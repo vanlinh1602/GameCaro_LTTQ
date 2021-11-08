@@ -46,6 +46,7 @@ namespace GameCaro
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openChat = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -85,6 +86,7 @@ namespace GameCaro
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.openChat);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.TxB_IP);
             this.panel3.Controls.Add(this.button1);
@@ -197,6 +199,16 @@ namespace GameCaro
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
+            // openChat
+            // 
+            this.openChat.Location = new System.Drawing.Point(39, 139);
+            this.openChat.Name = "openChat";
+            this.openChat.Size = new System.Drawing.Size(94, 29);
+            this.openChat.TabIndex = 6;
+            this.openChat.Text = "Chat";
+            this.openChat.UseVisualStyleBackColor = true;
+            this.openChat.Click += new System.EventHandler(this.openChat_Click);
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -240,6 +252,7 @@ namespace GameCaro
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Panel Chess_Board;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.Button openChat;
     }
 }
 
