@@ -27,26 +27,6 @@ namespace GameCaro
             InitializeComponent();
 
         }
-
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            if (sendMessage != null)
-                this.sendMessage(this, new EventSentMess(tbMess.Text));
-            richTextBox1.Text += "You: " + tbMess.Text + "\n";
-            tbMess.Clear();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainGame.checkShown = false;
-        }
-        private void tbMess_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                this.btnSend_Click(null, null);
-            }
-        }
     }
     public class EventSentMess : EventArgs
     {
