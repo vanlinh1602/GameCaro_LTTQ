@@ -10,8 +10,8 @@ namespace GameCaro
     public class ChessBoardManager
     {
         #region Properties
-        public static int Width = 27;
-        public static int Height = 19;
+        public static int Width = 28;
+        public static int Height = 20;
         public static int Chess_Width = 30;
         public static int Chess_Height = 30;
         private Panel chess_Board = new Panel();
