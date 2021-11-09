@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Text;
 using System.Windows.Forms;
 
@@ -8,6 +9,9 @@ namespace GameCaro
 {
     public class ChessBoardManager
     {
+        SoundPlayer simpleSound1 = new SoundPlayer(Application.StartupPath + @"Resources\Rikka Ow Paper Catch - Sound Button.wav");
+        SoundPlayer simpleSound2 = new SoundPlayer(Application.StartupPath + @"Resources\u.wav");
+
         #region Properties
         public static int Width = 27;
         public static int Height = 19;
@@ -126,6 +130,11 @@ namespace GameCaro
         private void Bnt_Click(object sender, EventArgs e)
         {
             Button bnt = sender as Button;
+            //if(Player.turn == 1)
+            //    simpleSound1.Play();
+            //else
+            //    simpleSound2.Play();
+            Chess_Board.Enabled = false;
             ChangeImageAndChangePlayer(bnt);
             CheckEndGame(bnt);
         }
