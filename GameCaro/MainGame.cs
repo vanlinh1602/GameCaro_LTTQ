@@ -30,7 +30,9 @@ namespace GameCaro
             //formChat.SendMessage += FormChat_SendMessage;
             NewGame();
         }
+        
 
+<<<<<<< HEAD
         //private void FormChat_SendMessage(object sender, EventSentMess e)
         //{
         //    socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
@@ -41,6 +43,8 @@ namespace GameCaro
         {
             throw new NotImplementedException();
         }
+=======
+>>>>>>> linh
         #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
         {
@@ -87,6 +91,8 @@ namespace GameCaro
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
+            socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
+            Chess_Board.Enabled = true;
         }
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -119,10 +125,12 @@ namespace GameCaro
             socket.IP = TxB_IP.Text;
             if (!socket.ConnectServer())
             {
+                Chess_Board.Enabled = true;
                 socket.CreateServer();
             }
             else
             {
+                Chess_Board.Enabled = false;
                 Listen();
             }
         }
@@ -145,9 +153,21 @@ namespace GameCaro
             switch (data.Command)
             {
                 case (int)Socket_Commmad.SEND_POINT:
-                    ChessBoard.PlayerMarkClick(data.Location);
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        TimeDown.Value = 0;
+                        TimeDown.Enabled = true;
+                        CountTime.Start();
+                        Chess_Board.Enabled = true;
+                        ChessBoard.PlayerMarkClick(data.Location);
+                    }));
                     break;
                 case (int)Socket_Commmad.NEW_GAME:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NewGame();
+                        Chess_Board.Enabled = false;
+                    }));
                     break;
                 case (int)Socket_Commmad.END_GAME:
                     break;
@@ -163,10 +183,10 @@ namespace GameCaro
             }
             Listen();
         }
-
-        public static bool checkShown = false;
         #endregion
 
+        #region MultiChat
+        public static bool checkShown = false;
         private void openChat_Click(object sender, EventArgs e)
         {
             if (!checkShown)
@@ -180,5 +200,11 @@ namespace GameCaro
                 checkShown = false;
             }
         }
+        private void FormChat_SendMessage(object sender, EventSentMess e)
+        {
+            socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
+            Listen();
+        }
+        #endregion
     }
 }

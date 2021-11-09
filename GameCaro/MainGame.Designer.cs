@@ -34,6 +34,7 @@ namespace GameCaro
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.openChat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxB_IP = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace GameCaro
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openChat = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -66,7 +66,7 @@ namespace GameCaro
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(806, 31);
+            this.panel2.Location = new System.Drawing.Point(809, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 284);
             this.panel2.TabIndex = 1;
@@ -93,10 +93,20 @@ namespace GameCaro
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.txBName);
             this.panel3.Controls.Add(this.TimeDown);
-            this.panel3.Location = new System.Drawing.Point(810, 319);
+            this.panel3.Location = new System.Drawing.Point(813, 319);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(339, 299);
             this.panel3.TabIndex = 2;
+            // 
+            // openChat
+            // 
+            this.openChat.Location = new System.Drawing.Point(39, 139);
+            this.openChat.Name = "openChat";
+            this.openChat.Size = new System.Drawing.Size(94, 29);
+            this.openChat.TabIndex = 6;
+            this.openChat.Text = "Chat";
+            this.openChat.UseVisualStyleBackColor = true;
+            this.openChat.Click += new System.EventHandler(this.openChat_Click);
             // 
             // label1
             // 
@@ -161,7 +171,7 @@ namespace GameCaro
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1167, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1170, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,21 +209,11 @@ namespace GameCaro
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
-            // openChat
-            // 
-            this.openChat.Location = new System.Drawing.Point(39, 139);
-            this.openChat.Name = "openChat";
-            this.openChat.Size = new System.Drawing.Size(94, 29);
-            this.openChat.TabIndex = 6;
-            this.openChat.Text = "Chat";
-            this.openChat.UseVisualStyleBackColor = true;
-            this.openChat.Click += new System.EventHandler(this.openChat_Click);
-            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 624);
+            this.ClientSize = new System.Drawing.Size(1170, 624);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Chess_Board);
