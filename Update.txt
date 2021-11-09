@@ -4,13 +4,11 @@
 	2. Undo
 	3. Quit Game
 	4. Xử lí game
+	5. Connect 2 người chơi
+	6. Multi Chat
 
 -- Chưa cập nhập
-	
-	Connect 2 người chơi
-	Multi Chat
+
 	Giao diện thắng thua
 	Hình ảnh cổ vũ
-
-Push lên bằng VS nè!!!!
-	
+	Một vài lỗi vặt trong game.
