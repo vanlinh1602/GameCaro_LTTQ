@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GameCaro
+{
+    static class Program
+    {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            //MainGame gameDisplay = new MainGame();
+            //StartUp controlStart = new StartUp();
+            //GameManager.ControlStart = controlStart;
+            //GameManager.GameDisplay = gameDisplay;
+            Application.Run(new MainGame());
+            //if (GameManager.CheckOpen)
+            //{
+            //    Application.Run(gameDisplay);
+            //}
+        }
+    }
+}
