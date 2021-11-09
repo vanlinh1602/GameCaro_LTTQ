@@ -33,7 +33,6 @@ namespace GameCaro
             this.tbMess = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbIcon = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -55,7 +54,7 @@ namespace GameCaro
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(96, 360);
+            this.btnSend.Location = new System.Drawing.Point(253, 325);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(94, 29);
             this.btnSend.TabIndex = 2;
@@ -65,7 +64,7 @@ namespace GameCaro
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(196, 360);
+            this.button1.Location = new System.Drawing.Point(112, 359);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 3;
@@ -73,27 +72,12 @@ namespace GameCaro
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cbIcon
-            // 
-            this.cbIcon.FormattingEnabled = true;
-            this.cbIcon.Items.AddRange(new object[] {
-            "(─‿‿─)",
-            "(*^‿^*)",
-            "(๑˃ᴗ˂)ﻭ",
-            "(￣□￣」)"});
-            this.cbIcon.Location = new System.Drawing.Point(252, 326);
-            this.cbIcon.Name = "cbIcon";
-            this.cbIcon.Size = new System.Drawing.Size(95, 28);
-            this.cbIcon.TabIndex = 4;
-            this.cbIcon.SelectedIndexChanged += new System.EventHandler(this.cbIcon_SelectedIndexChanged);
-            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 399);
+            this.ClientSize = new System.Drawing.Size(357, 418);
             this.ControlBox = false;
-            this.Controls.Add(this.cbIcon);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.tbMess);
@@ -110,6 +94,5 @@ namespace GameCaro
         private System.Windows.Forms.Button btnSend;
         public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbIcon;
     }
 }

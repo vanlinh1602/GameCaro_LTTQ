@@ -25,6 +25,7 @@ namespace GameCaro
         public Chat()
         {
             InitializeComponent();
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -34,24 +35,17 @@ namespace GameCaro
             richTextBox1.Text += "You: " + tbMess.Text + "\n";
             tbMess.Clear();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainGame.checkShown = false;
         }
-
         private void tbMess_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
                 this.btnSend_Click(null, null);
             }
-        }
-
-        private void cbIcon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tbMess.Text += " " + cbIcon.Text;
         }
     }
     public class EventSentMess : EventArgs
