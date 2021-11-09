@@ -27,7 +27,7 @@ namespace GameCaro
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             socket = new SocketManager();
             formChat = new Chat();
-            formChat.SendMessage += FormChat_SendMessage;
+            //formChat.SendMessage += FormChat_SendMessage;
             NewGame();
         }
         
@@ -165,7 +165,7 @@ namespace GameCaro
                 case (int)Socket_Commmad.UNDO:
                     break;
                 case (int)Socket_Commmad.CHAT:
-                    formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
+                    //formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
                     break;
             }
             Listen();
@@ -187,11 +187,11 @@ namespace GameCaro
                 checkShown = false;
             }
         }
-        private void FormChat_SendMessage(object sender, EventSentMess e)
-        {
-            socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
-            Listen();
-        }
+        //private void FormChat_SendMessage(object sender, EventSentMess e)
+        //{
+        //    socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
+        //    Listen();
+        //}
         #endregion
     }
 }
