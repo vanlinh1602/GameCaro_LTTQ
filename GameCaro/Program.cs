@@ -21,7 +21,7 @@ namespace GameCaro
             //StartUp controlStart = new StartUp();
             //GameManager.ControlStart = controlStart;
             //GameManager.GameDisplay = gameDisplay;
-            Application.Run(new MainGame());
+            Application.Run(new StartUp());
             //if (GameManager.CheckOpen)
             //{
             //    Application.Run(gameDisplay);

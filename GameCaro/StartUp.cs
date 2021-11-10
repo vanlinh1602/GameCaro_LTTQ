@@ -21,5 +21,11 @@ namespace GameCaro
             GameManager.CheckOpen = true;
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ConnectSever connect = new ConnectSever();
+            connect.ShowDialog();
+        }
     }
 }

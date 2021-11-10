@@ -89,3 +89,4 @@ C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.dll
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.ConnectSever.resources

@@ -83,9 +83,49 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroudConnect {
+            get {
+                object obj = ResourceManager.GetObject("BackgroudConnect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackGroundStart {
+            get {
+                object obj = ResourceManager.GetObject("BackGroundStart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CHAT2 {
             get {
                 object obj = ResourceManager.GetObject("CHAT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConnectBTN {
+            get {
+                object obj = ResourceManager.GetObject("ConnectBTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateBTN {
+            get {
+                object obj = ResourceManager.GetObject("CreateBTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +216,26 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap quit {
             get {
                 object obj = ResourceManager.GetObject("quit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RuleBtn {
+            get {
+                object obj = ResourceManager.GetObject("RuleBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartBtn {
+            get {
+                object obj = ResourceManager.GetObject("StartBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
