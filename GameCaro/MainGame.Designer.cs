@@ -155,12 +155,14 @@ namespace GameCaro
             this.BackgroundImage = global::GameCaro.Properties.Resources.BGMainGame;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1374, 697);
+            this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Chess_Board);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameCaro";

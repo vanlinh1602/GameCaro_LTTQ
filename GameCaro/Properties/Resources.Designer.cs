@@ -113,6 +113,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CloseBTN {
+            get {
+                object obj = ResourceManager.GetObject("CloseBTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ConnectBTN {
             get {
                 object obj = ResourceManager.GetObject("ConnectBTN", resourceCulture);
@@ -136,6 +146,16 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap DauHang {
             get {
                 object obj = ResourceManager.GetObject("DauHang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExitBTN {
+            get {
+                object obj = ResourceManager.GetObject("ExitBTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

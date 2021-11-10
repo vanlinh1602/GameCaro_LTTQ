@@ -22,7 +22,13 @@ namespace GameCaro
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             connect.ShowDialog();
-            Close();
+            if(!String.IsNullOrEmpty(GameManager.IP))
+                Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

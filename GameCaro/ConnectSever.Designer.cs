@@ -32,8 +32,10 @@ namespace GameCaro
             this.TbIP = new System.Windows.Forms.TextBox();
             this.PBConnect = new System.Windows.Forms.PictureBox();
             this.PBCreate = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBConnect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCreate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TbIP
@@ -49,9 +51,9 @@ namespace GameCaro
             this.PBConnect.BackColor = System.Drawing.Color.Transparent;
             this.PBConnect.BackgroundImage = global::GameCaro.Properties.Resources.ConnectBTN;
             this.PBConnect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBConnect.Location = new System.Drawing.Point(120, 224);
+            this.PBConnect.Location = new System.Drawing.Point(98, 194);
             this.PBConnect.Name = "PBConnect";
-            this.PBConnect.Size = new System.Drawing.Size(87, 38);
+            this.PBConnect.Size = new System.Drawing.Size(113, 47);
             this.PBConnect.TabIndex = 2;
             this.PBConnect.TabStop = false;
             this.PBConnect.Click += new System.EventHandler(this.PBConnect_Click);
@@ -61,12 +63,24 @@ namespace GameCaro
             this.PBCreate.BackColor = System.Drawing.Color.Transparent;
             this.PBCreate.BackgroundImage = global::GameCaro.Properties.Resources.CreateBTN;
             this.PBCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBCreate.Location = new System.Drawing.Point(263, 224);
+            this.PBCreate.Location = new System.Drawing.Point(254, 194);
             this.PBCreate.Name = "PBCreate";
-            this.PBCreate.Size = new System.Drawing.Size(87, 38);
+            this.PBCreate.Size = new System.Drawing.Size(117, 47);
             this.PBCreate.TabIndex = 3;
             this.PBCreate.TabStop = false;
             this.PBCreate.Click += new System.EventHandler(this.PBCreate_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::GameCaro.Properties.Resources.CloseBTN;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(177, 247);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 47);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ConnectSever
             // 
@@ -76,14 +90,17 @@ namespace GameCaro
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(468, 303);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PBCreate);
             this.Controls.Add(this.PBConnect);
             this.Controls.Add(this.TbIP);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ConnectSever";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect";
             ((System.ComponentModel.ISupportInitialize)(this.PBConnect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCreate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +110,6 @@ namespace GameCaro
         private System.Windows.Forms.TextBox TbIP;
         private System.Windows.Forms.PictureBox PBConnect;
         private System.Windows.Forms.PictureBox PBCreate;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

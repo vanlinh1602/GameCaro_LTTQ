@@ -34,7 +34,7 @@ namespace GameCaro
                 GameManager.IP = TbIP.Text;
                 GameManager.CheckOpenGame = true;
                 GameManager.isSever = false;
-                Close();
+                Hide();
             }
         }
 
@@ -44,7 +44,12 @@ namespace GameCaro
             GameManager.IP = TbIP.Text;
             GameManager.isSever = true;
             GameManager.CheckOpenGame = true;
-            Close();
+            Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }
