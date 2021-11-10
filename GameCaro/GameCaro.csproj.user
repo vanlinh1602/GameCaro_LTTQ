@@ -7,6 +7,9 @@
     <Compile Update="ConnectSever.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Winner.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainGame.cs">
       <SubType>Form</SubType>
     </Compile>
