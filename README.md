@@ -5,9 +5,10 @@
 	3. Quit Game
 	4. Xử lí game
 	5. Connect 2 người chơi
+	6. Giao diện thắng
 
 -- Chưa cập nhập
 
-	Giao diện thắng thua
+	Giao diện thua
 	Một vài lỗi vặt trong game.
 	Multi Chat
