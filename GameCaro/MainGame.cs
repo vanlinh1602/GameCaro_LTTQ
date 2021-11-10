@@ -25,13 +25,6 @@ namespace GameCaro
             formChat = new Chat();
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
-<<<<<<< HEAD
-            socket = new SocketManager();
-            formChat = new Chat();
-            //formChat.SendMessage += FormChat_SendMessage;
-=======
-            formChat.SendMessage += FormChat_SendMessage;
->>>>>>> linh
             NewGame();
             if (!GameManager.isSever)
             {
@@ -157,22 +150,6 @@ namespace GameCaro
             }
 
         }
-<<<<<<< HEAD
-        //private void FormChat_SendMessage(object sender, EventSentMess e)
-        //{
-        //    socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
-        //    Listen();
-        //}
-=======
-        private void FormChat_SendMessage(object sender, EventSentMess e)
-        {
-            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
-            Listen();
-        }
-
-
-
->>>>>>> linh
         #endregion
     }
 }

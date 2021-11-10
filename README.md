@@ -9,6 +9,5 @@
 -- Chưa cập nhập
 
 	Giao diện thắng thua
-	Hình ảnh cổ vũ
 	Một vài lỗi vặt trong game.
 	Multi Chat
