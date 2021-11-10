@@ -227,7 +227,7 @@ namespace GameCaro
             this.panel3.Controls.Add(this.PbQuit);
             this.panel3.Controls.Add(this.PbChat);
             this.panel3.Controls.Add(this.PbNewGame);
-            this.panel3.Location = new System.Drawing.Point(360, 617);
+            this.panel3.Location = new System.Drawing.Point(360, 621);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(644, 76);
             this.panel3.TabIndex = 7;
