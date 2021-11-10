@@ -33,11 +33,11 @@ namespace GameCaro
             this.rikkaPbox = new System.Windows.Forms.PictureBox();
             this.fireworkPBox = new System.Windows.Forms.PictureBox();
             this.okPBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.rikkaPbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fireworkPBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.okPBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // rikkaPbox
@@ -57,7 +57,7 @@ namespace GameCaro
             this.fireworkPBox.Image = ((System.Drawing.Image)(resources.GetObject("fireworkPBox.Image")));
             this.fireworkPBox.Location = new System.Drawing.Point(-1, -2);
             this.fireworkPBox.Name = "fireworkPBox";
-            this.fireworkPBox.Size = new System.Drawing.Size(149, 149);
+            this.fireworkPBox.Size = new System.Drawing.Size(200, 199);
             this.fireworkPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fireworkPBox.TabIndex = 1;
             this.fireworkPBox.TabStop = false;
@@ -76,16 +76,16 @@ namespace GameCaro
             this.okPBox.MouseLeave += new System.EventHandler(this.okPBox_MouseLeave);
             this.okPBox.MouseHover += new System.EventHandler(this.okPBox_MouseHover);
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(652, -2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(149, 149);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(602, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 199);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Winner
             // 
@@ -96,7 +96,7 @@ namespace GameCaro
             this.ClientSize = new System.Drawing.Size(800, 566);
             this.ControlBox = false;
             this.Controls.Add(this.okPBox);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.fireworkPBox);
             this.Controls.Add(this.rikkaPbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -104,7 +104,7 @@ namespace GameCaro
             ((System.ComponentModel.ISupportInitialize)(this.rikkaPbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fireworkPBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.okPBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -113,6 +113,6 @@ namespace GameCaro
         private System.Windows.Forms.PictureBox rikkaPbox;
         private System.Windows.Forms.PictureBox fireworkPBox;
         private System.Windows.Forms.PictureBox okPBox;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
