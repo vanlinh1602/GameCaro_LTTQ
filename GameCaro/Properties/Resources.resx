@@ -130,11 +130,14 @@
   <data name="RuleBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RuleBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ConnectBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConnectBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="New-game" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New-game.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,12 +151,6 @@
   <data name="BackgroudConnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroudConnect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backgorudAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backgorudAvatar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="StartBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StartBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,13 +160,7 @@
   <data name="P1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="point" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConnectBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConnectBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CreateBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CreateBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BGMainGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGMainGame2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
