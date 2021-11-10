@@ -30,15 +30,17 @@ namespace GameCaro
         private void InitializeComponent()
         {
             this.Chess_Board = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PointLayer1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PointLayer2 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PbSurrender = new System.Windows.Forms.PictureBox();
             this.PbQuit = new System.Windows.Forms.PictureBox();
             this.PbChat = new System.Windows.Forms.PictureBox();
             this.PbNewGame = new System.Windows.Forms.PictureBox();
+            this.AvatarPlayer1 = new System.Windows.Forms.PictureBox();
+            this.AvatarPlayer2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel3.SuspendLayout();
@@ -46,6 +48,8 @@ namespace GameCaro
             ((System.ComponentModel.ISupportInitialize)(this.PbQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbChat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNewGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarPlayer2)).BeginInit();
             this.SuspendLayout();
             // 
             // Chess_Board
@@ -55,15 +59,15 @@ namespace GameCaro
             this.Chess_Board.Size = new System.Drawing.Size(839, 603);
             this.Chess_Board.TabIndex = 0;
             // 
-            // label1
+            // PointLayer1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(95, 563);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 79);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "0";
+            this.PointLayer1.BackColor = System.Drawing.Color.Transparent;
+            this.PointLayer1.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PointLayer1.Location = new System.Drawing.Point(95, 563);
+            this.PointLayer1.Name = "PointLayer1";
+            this.PointLayer1.Size = new System.Drawing.Size(85, 79);
+            this.PointLayer1.TabIndex = 5;
+            this.PointLayer1.Text = "0";
             // 
             // pictureBox4
             // 
@@ -74,15 +78,15 @@ namespace GameCaro
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // label2
+            // PointLayer2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(1213, 563);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 79);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "0";
+            this.PointLayer2.BackColor = System.Drawing.Color.Transparent;
+            this.PointLayer2.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PointLayer2.Location = new System.Drawing.Point(1213, 563);
+            this.PointLayer2.Name = "PointLayer2";
+            this.PointLayer2.Size = new System.Drawing.Size(85, 79);
+            this.PointLayer2.TabIndex = 5;
+            this.PointLayer2.Text = "0";
             // 
             // pictureBox7
             // 
@@ -114,6 +118,7 @@ namespace GameCaro
             this.PbSurrender.Size = new System.Drawing.Size(70, 70);
             this.PbSurrender.TabIndex = 3;
             this.PbSurrender.TabStop = false;
+            this.PbSurrender.Click += new System.EventHandler(this.PbSurrender_Click);
             // 
             // PbQuit
             // 
@@ -148,6 +153,26 @@ namespace GameCaro
             this.PbNewGame.TabStop = false;
             this.PbNewGame.Click += new System.EventHandler(this.PbNewGame_Click);
             // 
+            // AvatarPlayer1
+            // 
+            this.AvatarPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.AvatarPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AvatarPlayer1.Location = new System.Drawing.Point(24, 21);
+            this.AvatarPlayer1.Name = "AvatarPlayer1";
+            this.AvatarPlayer1.Size = new System.Drawing.Size(209, 161);
+            this.AvatarPlayer1.TabIndex = 0;
+            this.AvatarPlayer1.TabStop = false;
+            // 
+            // AvatarPlayer2
+            // 
+            this.AvatarPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.AvatarPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AvatarPlayer2.Location = new System.Drawing.Point(1141, 21);
+            this.AvatarPlayer2.Name = "AvatarPlayer2";
+            this.AvatarPlayer2.Size = new System.Drawing.Size(211, 161);
+            this.AvatarPlayer2.TabIndex = 8;
+            this.AvatarPlayer2.TabStop = false;
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -156,9 +181,11 @@ namespace GameCaro
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1374, 697);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AvatarPlayer2);
+            this.Controls.Add(this.AvatarPlayer1);
+            this.Controls.Add(this.PointLayer2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PointLayer1);
             this.Controls.Add(this.Chess_Board);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);
@@ -174,21 +201,25 @@ namespace GameCaro
             ((System.ComponentModel.ISupportInitialize)(this.PbQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbChat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNewGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarPlayer2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel Chess_Board;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PointLayer1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PointLayer2;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox PbSurrender;
         private System.Windows.Forms.PictureBox PbQuit;
         private System.Windows.Forms.PictureBox PbChat;
         private System.Windows.Forms.PictureBox PbNewGame;
+        private System.Windows.Forms.PictureBox AvatarPlayer1;
+        private System.Windows.Forms.PictureBox AvatarPlayer2;
     }
 }
 

@@ -27,9 +27,10 @@ namespace GameCaro
         SEND_POINT,
         NOTIFY,
         NEW_GAME,
-        UNDO,
+        SURRENDER,
         END_GAME,
         QUIT,
+        AVATARPLAYER,
         CHAT
     }
 }

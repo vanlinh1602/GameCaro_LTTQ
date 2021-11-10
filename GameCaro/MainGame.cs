@@ -16,6 +16,7 @@ namespace GameCaro
     {
         ChessBoardManager ChessBoard;
         Chat formChat;
+        bool isMoreNewGame = false;
         public MainGame()
         {
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -25,15 +26,31 @@ namespace GameCaro
             formChat = new Chat();
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
+            ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
             formChat.SendMessage += FormChat_SendMessage;
             NewGame();
+            ChangeAvatar(true, 1);
+            ChangeAvatar(false, 2);
+            isMoreNewGame = true;
             if (!GameManager.isSever)
             {
                 Chess_Board.Enabled = false;
                 Listen();
             }
         }
-        
+
+        private void ChessBoard_GetPointForWiner(object sender, EventPointWiner e)
+        {
+            if(e.Winer == 1)
+            {
+                PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
+            }
+            else
+            {
+                PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
+            }
+        }
+
 
         #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
@@ -52,6 +69,25 @@ namespace GameCaro
         void NewGame()
         {
             ChessBoard.DrawChessBoard();
+            ChessBoard.FindWiner = false;
+            if (isMoreNewGame)
+            {
+                Random rag = new Random();
+                int av = rag.Next(1, 8);
+                ChangeAvatar(GameManager.isSever, av);
+                GameManager.Socket.Send(new SocketData((int)Socket_Commmad.AVATARPLAYER, new Point(), av.ToString()));
+            }
+        }
+        void ChangeAvatar(bool isSever, int av)
+        {
+            if (isSever)
+            {
+                AvatarPlayer1.BackgroundImage = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + av.ToString() + @".png");
+            }
+            else
+            {
+                AvatarPlayer2.BackgroundImage = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + av.ToString() + @".png");
+            }
         }
         private void EndGame()
         {
@@ -130,6 +166,13 @@ namespace GameCaro
                 case (int)Socket_Commmad.CHAT:
                     //formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
                     break;
+                case (int)Socket_Commmad.SURRENDER:
+                    ChessBoard_GetPointForWiner(null, new EventPointWiner(int.Parse(data.Message)));
+                    Chess_Board.Enabled = false;
+                    break;
+                case (int)Socket_Commmad.AVATARPLAYER:
+                    ChangeAvatar(!GameManager.isSever, int.Parse(data.Message));
+                    break;
             }
             Listen();
         }
@@ -160,5 +203,18 @@ namespace GameCaro
 
 
         #endregion
+
+        private void PbSurrender_Click(object sender, EventArgs e)
+        {
+            EndGame();
+            int winner;
+            if (!GameManager.isSever)
+                winner = 1;
+            else
+                winner = 2;
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SURRENDER, new Point(), winner.ToString()));
+            Chess_Board.Enabled = false;
+            ChessBoard_GetPointForWiner(null, new EventPointWiner(winner));
+        }
     }
 }

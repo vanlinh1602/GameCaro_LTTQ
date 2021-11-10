@@ -10,11 +10,12 @@ namespace GameCaro
     class GameManager
     {
         public static StartUp ControlStart;
-        public static ConnectSever ControlConnect;
         public static MainGame ControlGame;
         public static bool CheckOpenGame = false;
         public static string IP;
         public static bool isSever;
         public static SocketManager Socket;
+        public static bool CheckCloseForm = false;
+        
     }
 }

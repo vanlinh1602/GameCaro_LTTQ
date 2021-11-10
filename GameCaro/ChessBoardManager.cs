@@ -14,6 +14,8 @@ namespace GameCaro
         public static int Height = 20;
         public static int Chess_Width = 31;
         public static int Chess_Height = 30;
+        public int PlayerWin;
+        public bool FindWiner;
         private Panel chess_Board = new Panel();
         List<List<Button>> matrix;
         event EventHandler<EvenSentPoint> playerMark;
@@ -40,7 +42,18 @@ namespace GameCaro
                 endGame -= value;
             }
         }
-
+        event EventHandler<EventPointWiner> getPointForWiner;
+        public event EventHandler<EventPointWiner> GetPointForWiner
+        {
+            add
+            {
+                getPointForWiner += value;
+            }
+            remove
+            {
+                getPointForWiner -= value;
+            }
+        }
         public Panel Chess_Board { get => chess_Board; set => chess_Board = value; }
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
         public Stack<Point> StackUndo { get => stackUndo; set => stackUndo = value; }
@@ -130,6 +143,21 @@ namespace GameCaro
             Chess_Board.Enabled = false;
             ChangeImageAndChangePlayer(bnt);
             CheckEndGame(bnt);
+            if (FindWiner)
+            {
+                if (getPointForWiner != null)
+                {
+                    if (GameManager.isSever)
+                    {
+                        this.getPointForWiner(this, new EventPointWiner(1));
+                    }
+                    else
+                    {
+                        this.getPointForWiner(this, new EventPointWiner(2));
+                    }
+                }
+
+            }
         }
         public void PlayerMarkClick(Point point)
         {
@@ -142,11 +170,28 @@ namespace GameCaro
             int y = matrix[x].IndexOf(btn);
             StackUndo.Push(new Point(x, y));
             CheckEndGame(btn);
+            if (FindWiner)
+            {
+                if (getPointForWiner != null)
+                {
+                    if (GameManager.isSever)
+                    {
+                        this.getPointForWiner(this, new EventPointWiner(2));
+                    }
+                    else
+                    {
+                        this.getPointForWiner(this, new EventPointWiner(1));
+
+                    }
+                }
+                
+            }
         }
         private void CheckEndGame(Button bnt)
         {
             if (isEndGame(bnt))
             {
+                FindWiner = true;
                 if (endGame != null)
                 {
                     endGame(this, new EventArgs());
@@ -284,7 +329,14 @@ namespace GameCaro
         {
             this.location = location;
         }
-
-
+    }
+    public class EventPointWiner : EventArgs
+    {
+        private int winer;
+        public int Winer { get => winer; set => winer = value; }
+        public EventPointWiner(int winer)
+        {
+            this.winer = winer;
+        }
     }
 }
