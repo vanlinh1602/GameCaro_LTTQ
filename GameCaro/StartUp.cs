@@ -10,16 +10,19 @@ namespace GameCaro
 {
     public partial class StartUp : Form
     {
+        ConnectSever connect;
         public StartUp()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
+            connect = new ConnectSever();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            GameManager.CheckOpen = true;
-            this.Close();
+            connect.ShowDialog();
+            Close();
         }
     }
 }

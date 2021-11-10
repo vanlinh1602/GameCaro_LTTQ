@@ -90,7 +90,7 @@ namespace GameCaro
             return bf1.Deserialize(ms);
         }
         // Get IPv4 Address
-        public string GetLocalIPv4(NetworkInterfaceType _type)
+        public static string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";
             foreach (NetworkInterface item in NetworkInterface.GetAllNetworkInterfaces())

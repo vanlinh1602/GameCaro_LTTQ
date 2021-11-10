@@ -10,10 +10,11 @@ namespace GameCaro
     class GameManager
     {
         public static StartUp ControlStart;
-        public static MainGame GameDisplay;
-        public static int Timer_Interval = 100;
-        public static int Process_Step = 100;
-        public static int Process_Maximun = 10000;
-        public static bool CheckOpen = false;
+        public static ConnectSever ControlConnect;
+        public static MainGame ControlGame;
+        public static bool CheckOpenGame = false;
+        public static string IP;
+        public static bool isSever;
+        public static SocketManager Socket;
     }
 }

@@ -15,48 +15,41 @@ namespace GameCaro
     public partial class MainGame : Form
     {
         ChessBoardManager ChessBoard;
-        SocketManager socket;
         Chat formChat;
         public MainGame()
-        {   
+        {
+            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
             ChessBoard = new ChessBoardManager(Chess_Board);
-            SetUpTimeDown();
+            formChat = new Chat();
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
+<<<<<<< HEAD
             socket = new SocketManager();
             formChat = new Chat();
             //formChat.SendMessage += FormChat_SendMessage;
+=======
+            formChat.SendMessage += FormChat_SendMessage;
+>>>>>>> linh
             NewGame();
+            if (!GameManager.isSever)
+            {
+                Chess_Board.Enabled = false;
+                Listen();
+            }
         }
         
 
         #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
         {
-            TimeDown.Value = 0;
-            CountTime.Start();
-            socket.Send(new SocketData((int)Socket_Commmad.SEND_POINT, e.Location, ""));
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SEND_POINT, e.Location, ""));
             Listen();
         }
         private void ChessBoard_EndGame(object sender, EventArgs e)
         {
             EndGame();
-        }
-        void SetUpTimeDown()
-        {
-            TimeDown.Step = GameManager.Process_Step;
-            TimeDown.Maximum = GameManager.Process_Maximun;
-            CountTime.Interval = GameManager.Timer_Interval;
-        }
-        private void CountTime_Tick(object sender, EventArgs e)
-        {
-            TimeDown.PerformStep();
-            if (TimeDown.Value >= GameManager.Process_Maximun)
-            {
-                EndGame();
-            }
         }
         void Quit()
         {
@@ -64,30 +57,12 @@ namespace GameCaro
         }
         void NewGame()
         {
-            CountTime.Stop();
-            TimeDown.Value = 0;
             ChessBoard.DrawChessBoard();
         }
         private void EndGame()
         {
-            CountTime.Stop();
             MessageBox.Show("End Game! Good job Bro");
             Chess_Board.Enabled = false;
-            undoToolStripMenuItem.Enabled = false;
-        }
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewGame();
-            socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
-            Chess_Board.Enabled = true;
-        }
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Quit();
-        }
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChessBoard.Undo();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -95,39 +70,36 @@ namespace GameCaro
             {
                 e.Cancel = true;
             }
+            //else
+            //{
+            //    try
+            //    {
+            //        GameManager.Socket.Send(new SocketData((int)Socket_Commmad.QUIT, new Point(), ""));
+            //    }
+            //    catch { }
+            //}
+        }
+        private void PbNewGame_Click(object sender, EventArgs e)
+        {
+            NewGame();
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
+            Chess_Board.Enabled = true;
+        }
+        private void PbQuit_Click(object sender, EventArgs e)
+        {
+            Quit();
         }
         #endregion
 
         #region Socket
-        private void MainGame_Shown(object sender, EventArgs e)
-        {
-            TxB_IP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-            if (string.IsNullOrEmpty(TxB_IP.Text))
-            {
-                TxB_IP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            socket.IP = TxB_IP.Text;
-            if (!socket.ConnectServer())
-            {
-                Chess_Board.Enabled = true;
-                socket.CreateServer();
-            }
-            else
-            {
-                Chess_Board.Enabled = false;
-                Listen();
-            }
-        }
+        
         private void Listen()
         {
             Thread listenThread = new Thread(() =>
             {
                 try
                 {
-                    SocketData data = (SocketData)socket.Receive();
+                    SocketData data = (SocketData)GameManager.Socket.Receive();
                     HandleData(data);
                 }
                 catch { }
@@ -142,9 +114,6 @@ namespace GameCaro
                 case (int)Socket_Commmad.SEND_POINT:
                     this.Invoke((MethodInvoker)(() =>
                     {
-                        TimeDown.Value = 0;
-                        TimeDown.Enabled = true;
-                        CountTime.Start();
                         Chess_Board.Enabled = true;
                         ChessBoard.PlayerMarkClick(data.Location);
                     }));
@@ -161,8 +130,8 @@ namespace GameCaro
                 case (int)Socket_Commmad.NOTIFY:
                     break;
                 case (int)Socket_Commmad.QUIT:
-                    break;
-                case (int)Socket_Commmad.UNDO:
+                    MessageBox.Show("Người chơi đã thoát");
+                    Chess_Board.Enabled = false;
                     break;
                 case (int)Socket_Commmad.CHAT:
                     //formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
@@ -173,25 +142,37 @@ namespace GameCaro
         #endregion
 
         #region MultiChat
-        public static bool checkShown = false;
-        private void openChat_Click(object sender, EventArgs e)
+        bool CheckShowChat = false;
+        private void PbChat_Click(object sender, EventArgs e)
         {
-            if (!checkShown)
+            if (!CheckShowChat)
             {
                 formChat.Show();
-                checkShown = true;
+                CheckShowChat = true;
             }
             else
             {
                 formChat.Hide();
-                checkShown = false;
+                CheckShowChat = false;
             }
+
         }
+<<<<<<< HEAD
         //private void FormChat_SendMessage(object sender, EventSentMess e)
         //{
         //    socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
         //    Listen();
         //}
+=======
+        private void FormChat_SendMessage(object sender, EventSentMess e)
+        {
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
+            Listen();
+        }
+
+
+
+>>>>>>> linh
         #endregion
     }
 }
