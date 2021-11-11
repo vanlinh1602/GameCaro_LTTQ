@@ -19,7 +19,6 @@ namespace GameCaro
         private Panel chess_Board = new Panel();
         List<List<Button>> matrix;
         event EventHandler<EvenSentPoint> playerMark;
-        event EventHandler endGame;
         public event EventHandler<EvenSentPoint> PlayerMark
         {
             add
@@ -29,17 +28,6 @@ namespace GameCaro
             remove
             {
                 playerMark -= value;
-            }
-        }
-        public event EventHandler EndGame
-        {
-            add
-            {
-                endGame += value;
-            }
-            remove
-            {
-                endGame -= value;
             }
         }
         event EventHandler<EventPointWiner> getPointForWiner;
@@ -192,10 +180,6 @@ namespace GameCaro
             if (isEndGame(bnt))
             {
                 FindWiner = true;
-                if (endGame != null)
-                {
-                    endGame(this, new EventArgs());
-                }
             }
         }
         private bool isEndGame(Button btn)

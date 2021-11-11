@@ -16,21 +16,17 @@ namespace GameCaro
     {
         ChessBoardManager ChessBoard;
         Chat formChat;
+        Winner formWinner = new Winner();
+        Loser formLoser = new Loser();
         bool isMoreNewGame = false;
         public MainGame()
         {
-            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
             InitializeComponent();
             ChessBoard = new ChessBoardManager(Chess_Board);
             formChat = new Chat();
-            ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
-<<<<<<< HEAD
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
-            formChat.SendMessage += FormChat_SendMessage;
-=======
->>>>>>> origin/khanh
             NewGame();
             ChangeAvatar(true, 1);
             ChangeAvatar(false, 2);
@@ -44,13 +40,30 @@ namespace GameCaro
 
         private void ChessBoard_GetPointForWiner(object sender, EventPointWiner e)
         {
+            Chess_Board.Enabled = false;
             if(e.Winer == 1)
             {
                 PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
+                if (GameManager.isSever)
+                {
+                    ShowFormWin();
+                }
+                else
+                {
+                    ShowFormLose();
+                }
             }
             else
             {
                 PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
+                if (!GameManager.isSever)
+                {
+                    ShowFormWin();
+                }
+                else
+                {
+                    ShowFormLose();
+                }
             }
         }
 
@@ -60,10 +73,6 @@ namespace GameCaro
         {
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SEND_POINT, e.Location, ""));
             Listen();
-        }
-        private void ChessBoard_EndGame(object sender, EventArgs e)
-        {
-            EndGame();
         }
         void Quit()
         {
@@ -92,11 +101,7 @@ namespace GameCaro
                 AvatarPlayer2.BackgroundImage = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + av.ToString() + @".png");
             }
         }
-        private void EndGame()
-        {
-            MessageBox.Show("End Game! Good job Bro");
-            Chess_Board.Enabled = false;
-        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Are you sure want to quit?", "Warring", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -201,7 +206,7 @@ namespace GameCaro
 
         private void PbSurrender_Click(object sender, EventArgs e)
         {
-            EndGame();
+            Chess_Board.Enabled = false;
             int winner;
             if (!GameManager.isSever)
                 winner = 1;
@@ -210,6 +215,22 @@ namespace GameCaro
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SURRENDER, new Point(), winner.ToString()));
             Chess_Board.Enabled = false;
             ChessBoard_GetPointForWiner(null, new EventPointWiner(winner));
+        }
+        void ShowFormLose()
+        {
+            Thread showform = new Thread(()=> {
+                formLoser.ShowDialog();
+            });
+            showform.IsBackground = true;
+            showform.Start();
+        }
+        void ShowFormWin()
+        {
+            Thread showform = new Thread(() => {
+                formWinner.ShowDialog();
+            });
+            showform.IsBackground = true;
+            showform.Start();
         }
     }
 }

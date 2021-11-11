@@ -101,6 +101,7 @@ namespace GameCaro
             this.Controls.Add(this.centerPbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Winner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.centerPbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fireworkPBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.okPBox)).EndInit();
