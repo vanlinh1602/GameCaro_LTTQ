@@ -1,5 +1,4 @@
 -- Đã cập nhập
-
 1. New game
 2. Undo
 3. Quit Game
