@@ -90,3 +90,25 @@ C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.ConnectSever.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.exe
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.deps.json
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.json
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.dev.json
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.dll
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.AssemblyReference.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Chat.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.ConnectSever.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Winner.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.MainGame.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Properties.Resources.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.StartUp.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.GenerateResource.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfoInputs.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfo.cs
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.CoreCompileInputs.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Loser.resources

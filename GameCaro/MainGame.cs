@@ -26,8 +26,11 @@ namespace GameCaro
             formChat = new Chat();
             ChessBoard.EndGame += ChessBoard_EndGame;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
+<<<<<<< HEAD
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
             formChat.SendMessage += FormChat_SendMessage;
+=======
+>>>>>>> origin/khanh
             NewGame();
             ChangeAvatar(true, 1);
             ChangeAvatar(false, 2);
@@ -194,14 +197,6 @@ namespace GameCaro
             }
 
         }
-        private void FormChat_SendMessage(object sender, EventSentMess e)
-        {
-            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), e.Mess));
-            Listen();
-        }
-
-
-
         #endregion
 
         private void PbSurrender_Click(object sender, EventArgs e)
