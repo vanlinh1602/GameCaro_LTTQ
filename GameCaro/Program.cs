@@ -25,7 +25,7 @@ namespace GameCaro
                 GameManager.ControlGame = new MainGame();
                 Application.Run(GameManager.ControlGame);
             }*/
-            Application.Run(new Winner());
+            Application.Run(new Loser());
         }
     }
 }

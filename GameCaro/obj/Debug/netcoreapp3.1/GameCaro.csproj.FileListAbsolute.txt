@@ -111,3 +111,4 @@ C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameC
 C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
 C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Loser.resources

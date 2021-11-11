@@ -30,26 +30,26 @@ namespace GameCaro
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Winner));
-            this.rikkaPbox = new System.Windows.Forms.PictureBox();
+            this.centerPbox = new System.Windows.Forms.PictureBox();
             this.fireworkPBox = new System.Windows.Forms.PictureBox();
             this.okPBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.rikkaPbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerPbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fireworkPBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.okPBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // rikkaPbox
+            // centerPbox
             // 
-            this.rikkaPbox.BackColor = System.Drawing.Color.Transparent;
-            this.rikkaPbox.Image = ((System.Drawing.Image)(resources.GetObject("rikkaPbox.Image")));
-            this.rikkaPbox.Location = new System.Drawing.Point(267, 189);
-            this.rikkaPbox.Name = "rikkaPbox";
-            this.rikkaPbox.Size = new System.Drawing.Size(260, 297);
-            this.rikkaPbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rikkaPbox.TabIndex = 0;
-            this.rikkaPbox.TabStop = false;
+            this.centerPbox.BackColor = System.Drawing.Color.Transparent;
+            this.centerPbox.Image = ((System.Drawing.Image)(resources.GetObject("centerPbox.Image")));
+            this.centerPbox.Location = new System.Drawing.Point(57, 171);
+            this.centerPbox.Name = "centerPbox";
+            this.centerPbox.Size = new System.Drawing.Size(472, 357);
+            this.centerPbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.centerPbox.TabIndex = 0;
+            this.centerPbox.TabStop = false;
             // 
             // fireworkPBox
             // 
@@ -98,10 +98,10 @@ namespace GameCaro
             this.Controls.Add(this.okPBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.fireworkPBox);
-            this.Controls.Add(this.rikkaPbox);
+            this.Controls.Add(this.centerPbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Winner";
-            ((System.ComponentModel.ISupportInitialize)(this.rikkaPbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerPbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fireworkPBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.okPBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -110,7 +110,7 @@ namespace GameCaro
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox rikkaPbox;
+        private System.Windows.Forms.PictureBox centerPbox;
         private System.Windows.Forms.PictureBox fireworkPBox;
         private System.Windows.Forms.PictureBox okPBox;
         private System.Windows.Forms.PictureBox pictureBox1;
