@@ -63,6 +63,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aiko_send_button {
+            get {
+                object obj = ResourceManager.GetObject("aiko-send-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anime_happy {
             get {
                 object obj = ResourceManager.GetObject("anime-happy", resourceCulture);
@@ -96,6 +106,26 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap BGMainGame {
             get {
                 object obj = ResourceManager.GetObject("BGMainGame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chat_background {
+            get {
+                object obj = ResourceManager.GetObject("chat-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chat_background1 {
+            get {
+                object obj = ResourceManager.GetObject("chat-background1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap DauHang {
             get {
                 object obj = ResourceManager.GetObject("DauHang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emoji_button {
+            get {
+                object obj = ResourceManager.GetObject("emoji-button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
