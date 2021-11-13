@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GameCaro
@@ -28,7 +29,22 @@ namespace GameCaro
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Exit exit = new Exit();
+            exit.ShowDialog();
+            if (GameManager.checkExitGame)
+            {
+                Close();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => {
+                Tutorial tutorial = new Tutorial();
+                Application.Run(new Tutorial());
+            });
+            thread.IsBackground = true;
+            thread.Start();
         }
     }
 }

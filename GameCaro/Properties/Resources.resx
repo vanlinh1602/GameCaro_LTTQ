@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BackGroundStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackGroundStart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CloseBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TutorialBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TutorialBTN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CancelBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CancelBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="P2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,14 +133,17 @@
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RuleBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RuleBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ConnectBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConnectBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CreateBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CreateBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DauHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DauHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="New-game" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New-game.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -144,9 +153,6 @@
   </data>
   <data name="CHAT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CHAT2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DauHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DauHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackgroudConnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroudConnect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,13 +166,16 @@
   <data name="StartBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StartBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackGroundStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackGroundStart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="anime-happy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anime-happy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="P1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SureBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SureBTN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

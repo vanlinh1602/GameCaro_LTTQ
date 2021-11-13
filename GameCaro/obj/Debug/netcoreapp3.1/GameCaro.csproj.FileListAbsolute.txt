@@ -116,3 +116,5 @@ C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreap
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.MainGame.resources
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.StartUp.resources
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Winner.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Tutorial.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Exit.resources

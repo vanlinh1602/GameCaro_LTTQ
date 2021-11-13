@@ -37,37 +37,6 @@ namespace GameCaro
                 Listen();
             }
         }
-
-        private void ChessBoard_GetPointForWiner(object sender, EventPointWiner e)
-        {
-            Chess_Board.Enabled = false;
-            if(e.Winer == 1)
-            {
-                PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
-                if (GameManager.isSever)
-                {
-                    ShowFormWin();
-                }
-                else
-                {
-                    ShowFormLose();
-                }
-            }
-            else
-            {
-                PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
-                if (!GameManager.isSever)
-                {
-                    ShowFormWin();
-                }
-                else
-                {
-                    ShowFormLose();
-                }
-            }
-        }
-
-
         #region ControlsInGame
         private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
         {
@@ -76,7 +45,12 @@ namespace GameCaro
         }
         void Quit()
         {
-            Application.Exit();
+            Exit exit = new Exit();
+            exit.ShowDialog();
+            if (GameManager.checkExitGame)
+            {
+                Close();
+            }
         }
         void NewGame()
         {
@@ -101,22 +75,6 @@ namespace GameCaro
                 AvatarPlayer2.BackgroundImage = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + av.ToString() + @".png");
             }
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Are you sure want to quit?", "Warring", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-            //else
-            //{
-            //    try
-            //    {
-            //        GameManager.Socket.Send(new SocketData((int)Socket_Commmad.QUIT, new Point(), ""));
-            //    }
-            //    catch { }
-            //}
-        }
         private void PbNewGame_Click(object sender, EventArgs e)
         {
             NewGame();
@@ -127,10 +85,66 @@ namespace GameCaro
         {
             Quit();
         }
+        private void PbSurrender_Click(object sender, EventArgs e)
+        {
+            Chess_Board.Enabled = false;
+            int winner;
+            if (!GameManager.isSever)
+                winner = 1;
+            else
+                winner = 2;
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SURRENDER, new Point(), winner.ToString()));
+            Chess_Board.Enabled = false;
+            ChessBoard_GetPointForWiner(null, new EventPointWiner(winner));
+        }
+        void ShowFormLose()
+        {
+            Thread showform = new Thread(() => {
+                formLoser.ShowDialog();
+            });
+            showform.IsBackground = true;
+            showform.Start();
+        }
+        void ShowFormWin()
+        {
+            Thread showform = new Thread(() => {
+                formWinner.ShowDialog();
+            });
+            showform.IsBackground = true;
+            showform.Start();
+        }
+        private void ChessBoard_GetPointForWiner(object sender, EventPointWiner e)
+        {
+            Chess_Board.Enabled = false;
+            if (e.Winer == 1)
+            {
+                PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
+                if (GameManager.isSever)
+                {
+                    ShowFormWin();
+                }
+                else
+                {
+                    ShowFormLose();
+                }
+            }
+            else
+            {
+                PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
+                if (!GameManager.isSever)
+                {
+                    ShowFormWin();
+                }
+                else
+                {
+                    ShowFormLose();
+                }
+            }
+        }
         #endregion
 
         #region Socket
-        
+
         private void Listen()
         {
             Thread listenThread = new Thread(() =>
@@ -204,33 +218,6 @@ namespace GameCaro
         }
         #endregion
 
-        private void PbSurrender_Click(object sender, EventArgs e)
-        {
-            Chess_Board.Enabled = false;
-            int winner;
-            if (!GameManager.isSever)
-                winner = 1;
-            else
-                winner = 2;
-            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SURRENDER, new Point(), winner.ToString()));
-            Chess_Board.Enabled = false;
-            ChessBoard_GetPointForWiner(null, new EventPointWiner(winner));
-        }
-        void ShowFormLose()
-        {
-            Thread showform = new Thread(()=> {
-                formLoser.ShowDialog();
-            });
-            showform.IsBackground = true;
-            showform.Start();
-        }
-        void ShowFormWin()
-        {
-            Thread showform = new Thread(() => {
-                formWinner.ShowDialog();
-            });
-            showform.IsBackground = true;
-            showform.Start();
-        }
+        
     }
 }
