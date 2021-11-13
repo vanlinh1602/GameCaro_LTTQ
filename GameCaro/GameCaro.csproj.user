@@ -13,8 +13,16 @@
     <Compile Update="Loser.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="Tutorial.cs">
       <SubType>Form</SubType>
+=======
+    <Compile Update="CustomRTB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="TranslucentPanel.cs">
+      <SubType>Component</SubType>
+>>>>>>> khanh
     </Compile>
     <Compile Update="Winner.cs">
       <SubType>Form</SubType>
