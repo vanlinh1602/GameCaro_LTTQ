@@ -19,17 +19,7 @@ namespace GameCaro
         }
         #region Control
 
-        private void sendPBox_MouseHover(object sender, EventArgs e)
-        {
-            sendPBox.SizeMode = PictureBoxSizeMode.Zoom;
-        }
-
-        private void sendPBox_MouseLeave(object sender, EventArgs e)
-        {
-            sendPBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
-        }
-
+        
         private void kaomojiPBox_Click(object sender, EventArgs e)
         {
             if (!kaomojiList.Visible)
@@ -81,6 +71,16 @@ namespace GameCaro
             {
                 sendPBox_Click(null, null);
             }
+        }
+
+        private void tempSendPBox_MouseHover(object sender, EventArgs e)
+        {
+            tempSendPBox.Hide();
+        }
+
+        private void sendPBox_MouseLeave(object sender, EventArgs e)
+        {
+            tempSendPBox.Show();
         }
     }
 }

@@ -31,13 +31,16 @@ namespace GameCaro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chat));
             this.chatDisplay = new GameCaro.CustomRTB();
             this.chatTextBox = new GameCaro.CustomRTB();
-            this.sendPBox = new System.Windows.Forms.PictureBox();
             this.kaomojiPBox = new System.Windows.Forms.PictureBox();
             this.kaomojiList = new System.Windows.Forms.ListView();
-            ((System.ComponentModel.ISupportInitialize)(this.sendPBox)).BeginInit();
+            this.sendPBox = new System.Windows.Forms.PictureBox();
+            this.tempSendPBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kaomojiPBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sendPBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempSendPBox)).BeginInit();
             this.SuspendLayout();
             // 
             // chatDisplay
@@ -64,25 +67,11 @@ namespace GameCaro
             this.chatTextBox.Text = "";
             this.chatTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatTextBox_KeyDown);
             // 
-            // sendPBox
-            // 
-            this.sendPBox.BackColor = System.Drawing.Color.Transparent;
-            this.sendPBox.Image = global::GameCaro.Properties.Resources.aiko_send_button;
-            this.sendPBox.Location = new System.Drawing.Point(513, 414);
-            this.sendPBox.Name = "sendPBox";
-            this.sendPBox.Size = new System.Drawing.Size(85, 87);
-            this.sendPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sendPBox.TabIndex = 0;
-            this.sendPBox.TabStop = false;
-            this.sendPBox.Click += new System.EventHandler(this.sendPBox_Click);
-            this.sendPBox.MouseLeave += new System.EventHandler(this.sendPBox_MouseLeave);
-            this.sendPBox.MouseHover += new System.EventHandler(this.sendPBox_MouseHover);
-            // 
             // kaomojiPBox
             // 
             this.kaomojiPBox.BackColor = System.Drawing.Color.Transparent;
             this.kaomojiPBox.Image = global::GameCaro.Properties.Resources.emoji_button;
-            this.kaomojiPBox.Location = new System.Drawing.Point(525, 606);
+            this.kaomojiPBox.Location = new System.Drawing.Point(526, 466);
             this.kaomojiPBox.Name = "kaomojiPBox";
             this.kaomojiPBox.Size = new System.Drawing.Size(73, 39);
             this.kaomojiPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,13 +86,38 @@ namespace GameCaro
             this.kaomojiList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kaomojiList.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kaomojiList.HideSelection = false;
-            this.kaomojiList.Location = new System.Drawing.Point(350, 434);
+            this.kaomojiList.Location = new System.Drawing.Point(355, 268);
             this.kaomojiList.Name = "kaomojiList";
-            this.kaomojiList.Size = new System.Drawing.Size(185, 166);
+            this.kaomojiList.Size = new System.Drawing.Size(244, 192);
             this.kaomojiList.TabIndex = 3;
             this.kaomojiList.UseCompatibleStateImageBehavior = false;
             this.kaomojiList.Visible = false;
             this.kaomojiList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.kaomojiList_MouseDoubleClick);
+            // 
+            // sendPBox
+            // 
+            this.sendPBox.BackColor = System.Drawing.Color.Transparent;
+            this.sendPBox.Image = ((System.Drawing.Image)(resources.GetObject("sendPBox.Image")));
+            this.sendPBox.Location = new System.Drawing.Point(545, 606);
+            this.sendPBox.Name = "sendPBox";
+            this.sendPBox.Size = new System.Drawing.Size(54, 54);
+            this.sendPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sendPBox.TabIndex = 0;
+            this.sendPBox.TabStop = false;
+            this.sendPBox.Click += new System.EventHandler(this.sendPBox_Click);
+            this.sendPBox.MouseLeave += new System.EventHandler(this.sendPBox_MouseLeave);
+            // 
+            // tempSendPBox
+            // 
+            this.tempSendPBox.BackColor = System.Drawing.Color.Transparent;
+            this.tempSendPBox.Image = global::GameCaro.Properties.Resources.send_button_stage_11;
+            this.tempSendPBox.Location = new System.Drawing.Point(545, 606);
+            this.tempSendPBox.Name = "tempSendPBox";
+            this.tempSendPBox.Size = new System.Drawing.Size(54, 54);
+            this.tempSendPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tempSendPBox.TabIndex = 4;
+            this.tempSendPBox.TabStop = false;
+            this.tempSendPBox.MouseHover += new System.EventHandler(this.tempSendPBox_MouseHover);
             // 
             // Chat
             // 
@@ -112,6 +126,7 @@ namespace GameCaro
             this.BackgroundImage = global::GameCaro.Properties.Resources.chat_background1;
             this.ClientSize = new System.Drawing.Size(600, 657);
             this.ControlBox = false;
+            this.Controls.Add(this.tempSendPBox);
             this.Controls.Add(this.kaomojiList);
             this.Controls.Add(this.kaomojiPBox);
             this.Controls.Add(this.sendPBox);
@@ -122,17 +137,19 @@ namespace GameCaro
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Chat";
             this.Load += new System.EventHandler(this.Chat_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sendPBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaomojiPBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sendPBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempSendPBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private PictureBox sendPBox;
         private CustomRTB chatTextBox;
         private PictureBox kaomojiPBox;
         private ListView kaomojiList;
         public CustomRTB chatDisplay;
+        private PictureBox sendPBox;
+        private PictureBox tempSendPBox;
     }
 }

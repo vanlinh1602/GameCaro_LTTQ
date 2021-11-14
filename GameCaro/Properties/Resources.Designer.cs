@@ -283,6 +283,36 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap send_button_final_stage {
+            get {
+                object obj = ResourceManager.GetObject("send-button-final-stage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_button_stage_1 {
+            get {
+                object obj = ResourceManager.GetObject("send-button-stage-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_button_stage_11 {
+            get {
+                object obj = ResourceManager.GetObject("send-button-stage-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StartBtn {
             get {
                 object obj = ResourceManager.GetObject("StartBtn", resourceCulture);
