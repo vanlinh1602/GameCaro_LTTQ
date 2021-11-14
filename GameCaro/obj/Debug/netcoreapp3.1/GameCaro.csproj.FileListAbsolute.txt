@@ -116,5 +116,33 @@ C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreap
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.MainGame.resources
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.StartUp.resources
 C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Winner.resources
-C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Tutorial.resources
-C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Exit.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.CustomRTB.resources
+C:\Code\msvsCode\VP project\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.TranslucentPanel.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.CustomRTB.resources
+C:\Users\Admin\Desktop\New folder (2)\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.TranslucentPanel.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.exe
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.deps.json
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.json
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\Khanh\GameCaro\bin\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Chat.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.ConnectSever.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.CustomRTB.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Loser.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.MainGame.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Properties.Resources.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.StartUp.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.TranslucentPanel.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Winner.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Tutorial.resources
+C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Exit.resources

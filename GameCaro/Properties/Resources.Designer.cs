@@ -63,6 +63,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aiko_send_button {
+            get {
+                object obj = ResourceManager.GetObject("aiko-send-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anime_happy {
             get {
                 object obj = ResourceManager.GetObject("anime-happy", resourceCulture);
@@ -76,6 +86,16 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap BackgroudConnect {
             get {
                 object obj = ResourceManager.GetObject("BackgroudConnect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackgroundExit {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundExit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,26 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap CancelBTN {
             get {
                 object obj = ResourceManager.GetObject("CancelBTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chat_background {
+            get {
+                object obj = ResourceManager.GetObject("chat-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chat_background1 {
+            get {
+                object obj = ResourceManager.GetObject("chat-background1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +196,16 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap DauHang {
             get {
                 object obj = ResourceManager.GetObject("DauHang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emoji_button {
+            get {
+                object obj = ResourceManager.GetObject("emoji-button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +273,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RuleBtn {
+            get {
+                object obj = ResourceManager.GetObject("RuleBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StartBtn {
             get {
                 object obj = ResourceManager.GetObject("StartBtn", resourceCulture);
@@ -246,16 +306,6 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap Tutorial {
             get {
                 object obj = ResourceManager.GetObject("Tutorial", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TutorialBTN {
-            get {
-                object obj = ResourceManager.GetObject("TutorialBTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

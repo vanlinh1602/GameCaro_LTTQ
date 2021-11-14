@@ -218,6 +218,6 @@ namespace GameCaro
         }
         #endregion
 
-        
+
     }
 }

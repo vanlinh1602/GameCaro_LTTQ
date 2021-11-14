@@ -15,8 +15,8 @@ namespace GameCaro
             InitializeComponent();
             SurePB.MouseHover += MouseHover;
             SurePB.MouseLeave += MouseLeave;
-            CancelPB.MouseHover += MouseHover;
-            CancelPB.MouseLeave += MouseLeave;
+            pictureBox2.MouseHover += MouseHover;
+            pictureBox2.MouseLeave += MouseLeave;
         }
 
         void MouseHover(object sender, EventArgs e)
@@ -30,15 +30,16 @@ namespace GameCaro
             picture.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-        private void CancelPB_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void SurePB_Click(object sender, EventArgs e)
         {
             GameManager.checkExitGame = true;
             Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+
         }
     }
 }

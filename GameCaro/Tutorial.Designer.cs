@@ -39,7 +39,6 @@ namespace GameCaro
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1057, 614);
             this.Name = "Tutorial";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tutorial";
             this.ResumeLayout(false);
 
