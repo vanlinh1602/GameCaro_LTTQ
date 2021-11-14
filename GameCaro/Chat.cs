@@ -17,11 +17,7 @@ namespace GameCaro
             InitializeComponent();
 
         }
-
-        private void sendPBox_Click(object sender, EventArgs e)
-        {
-
-        }
+        #region Control
 
         private void sendPBox_MouseHover(object sender, EventArgs e)
         {
@@ -55,11 +51,35 @@ namespace GameCaro
         private void Chat_Load(object sender, EventArgs e)
         {
             String[] fileLines = File.ReadAllLines(Application.StartupPath + "\\Kaomoji.txt");
-            for(int i = 0; i < fileLines.Length; i++)
+            for (int i = 0; i < fileLines.Length; i++)
             {
 
                 kaomojiList.Items.Add(new ListViewItem(fileLines[i]));
-                
+
+            }
+        }
+        private void kaomojiList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListView icon = sender as ListView;
+            chatTextBox.Text += icon.FocusedItem.Text;
+        }
+
+        #endregion
+        #region Socket
+        private void sendPBox_Click(object sender, EventArgs e)
+        {
+            chatDisplay.Text += "You: " + chatTextBox.Text + "\n";
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), chatTextBox.Text));
+            chatTextBox.Clear();
+        }
+
+        #endregion
+
+        private void chatTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                sendPBox_Click(null, null);
             }
         }
     }

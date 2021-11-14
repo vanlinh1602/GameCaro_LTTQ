@@ -146,3 +146,10 @@ C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
 C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Tutorial.resources
 C:\Users\Admin\Desktop\Khanh\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Exit.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.ConnectSever.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.CustomRTB.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Exit.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Loser.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.TranslucentPanel.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Tutorial.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Winner.resources

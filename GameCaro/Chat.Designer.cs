@@ -62,6 +62,7 @@ namespace GameCaro
             this.chatTextBox.Size = new System.Drawing.Size(410, 99);
             this.chatTextBox.TabIndex = 1;
             this.chatTextBox.Text = "";
+            this.chatTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatTextBox_KeyDown);
             // 
             // sendPBox
             // 
@@ -102,6 +103,7 @@ namespace GameCaro
             this.kaomojiList.TabIndex = 3;
             this.kaomojiList.UseCompatibleStateImageBehavior = false;
             this.kaomojiList.Visible = false;
+            this.kaomojiList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.kaomojiList_MouseDoubleClick);
             // 
             // Chat
             // 
@@ -115,7 +117,7 @@ namespace GameCaro
             this.Controls.Add(this.sendPBox);
             this.Controls.Add(this.chatTextBox);
             this.Controls.Add(this.chatDisplay);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Chat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Chat";
@@ -127,11 +129,10 @@ namespace GameCaro
         }
 
         #endregion
-
-        private CustomRTB chatDisplay;
         private PictureBox sendPBox;
         private CustomRTB chatTextBox;
         private PictureBox kaomojiPBox;
         private ListView kaomojiList;
+        public CustomRTB chatDisplay;
     }
 }

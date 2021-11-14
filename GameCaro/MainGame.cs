@@ -186,7 +186,7 @@ namespace GameCaro
                     Chess_Board.Enabled = false;
                     break;
                 case (int)Socket_Commmad.CHAT:
-                    //formChat.richTextBox1.Text += "Player: " + data.Message + "\n";
+                    formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
                     break;
                 case (int)Socket_Commmad.SURRENDER:
                     ChessBoard_GetPointForWiner(null, new EventPointWiner(int.Parse(data.Message)));
