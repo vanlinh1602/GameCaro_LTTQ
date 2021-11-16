@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\msvsCode\\VP project\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj": {}
   },
   "projects": {
-    "C:\\Code\\msvsCode\\VP project\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\msvsCode\\VP project\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
         "projectName": "GameCaro",
-        "projectPath": "C:\\Code\\msvsCode\\VP project\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
-        "packagesPath": "C:\\Users\\Khanh Le Vu\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\msvsCode\\VP project\\GameCaro_LTTQ\\GameCaro\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\GameCaro.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GameCaro_LTTQ\\GameCaro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Khanh Le Vu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
