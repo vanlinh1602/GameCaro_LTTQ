@@ -110,6 +110,8 @@ namespace GameCaro
         }
         private void PbSurrender_Click(object sender, EventArgs e)
         {
+            if (!isMoreNewGame)
+                return;
             Chess_Board.Enabled = false;
             int winner;
             if (!GameManager.isSever)
