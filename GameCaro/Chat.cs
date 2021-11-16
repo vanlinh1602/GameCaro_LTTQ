@@ -62,6 +62,10 @@ namespace GameCaro
         #region Socket
         private void sendPBox_Click(object sender, EventArgs e)
         {
+            if (!MainGame.isPlayerConnect)
+                return;
+            if (string.IsNullOrEmpty(chatTextBox.Text))
+                return;
             chatDisplay.Text += "You: " + chatTextBox.Text + "\n";
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), chatTextBox.Text));
             chatTextBox.Clear();

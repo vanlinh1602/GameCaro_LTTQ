@@ -19,7 +19,7 @@ namespace GameCaro
         Winner formWinner = new Winner();
         Loser formLoser = new Loser();
         bool isMoreNewGame = false;
-        bool isPlayerConnect = false;
+        public static bool isPlayerConnect = false;
         public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
@@ -33,6 +33,7 @@ namespace GameCaro
             if (!GameManager.isSever)
             {
                 Chess_Board.Enabled = false;
+                isPlayerConnect = true;
                 Listen();
             }
             else
@@ -97,6 +98,8 @@ namespace GameCaro
         }
         private void PbNewGame_Click(object sender, EventArgs e)
         {
+            if (!isPlayerConnect)
+                return;
             NewGame();
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
             Chess_Board.Enabled = true;
@@ -112,6 +115,8 @@ namespace GameCaro
         private void PbSurrender_Click(object sender, EventArgs e)
         {
             if (!isMoreNewGame)
+                return;
+            if (!isPlayerConnect)
                 return;
             Chess_Board.Enabled = false;
             int winner;
