@@ -46,11 +46,11 @@ namespace GameCaro
             // chatDisplay
             // 
             this.chatDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.chatDisplay.Enabled = false;
             this.chatDisplay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chatDisplay.ForeColor = System.Drawing.SystemColors.Info;
             this.chatDisplay.Location = new System.Drawing.Point(148, 12);
             this.chatDisplay.Name = "chatDisplay";
+            this.chatDisplay.ReadOnly = true;
             this.chatDisplay.Size = new System.Drawing.Size(387, 396);
             this.chatDisplay.TabIndex = 0;
             this.chatDisplay.Text = "";
