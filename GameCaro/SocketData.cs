@@ -25,10 +25,8 @@ namespace GameCaro
     public enum Socket_Commmad
     {
         SEND_POINT,
-        NOTIFY,
         NEW_GAME,
         SURRENDER,
-        END_GAME,
         QUIT,
         AVATARPLAYER,
         CHAT

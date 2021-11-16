@@ -54,6 +54,7 @@ namespace GameCaro
             this.chatDisplay.Size = new System.Drawing.Size(387, 396);
             this.chatDisplay.TabIndex = 0;
             this.chatDisplay.Text = "";
+            this.chatDisplay.TextChanged += new System.EventHandler(this.chatDisplay_TextChanged);
             // 
             // chatTextBox
             // 
@@ -66,6 +67,7 @@ namespace GameCaro
             this.chatTextBox.TabIndex = 1;
             this.chatTextBox.Text = "";
             this.chatTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatTextBox_KeyDown);
+            this.chatTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.chatTextBox_KeyPress);
             // 
             // kaomojiPBox
             // 

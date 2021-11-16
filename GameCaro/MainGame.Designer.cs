@@ -29,6 +29,7 @@ namespace GameCaro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGame));
             this.Chess_Board = new System.Windows.Forms.Panel();
             this.PointLayer1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -54,6 +55,8 @@ namespace GameCaro
             // 
             // Chess_Board
             // 
+            this.Chess_Board.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Chess_Board.BackgroundImage")));
+            this.Chess_Board.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Chess_Board.Location = new System.Drawing.Point(270, 12);
             this.Chess_Board.Name = "Chess_Board";
             this.Chess_Board.Size = new System.Drawing.Size(839, 603);

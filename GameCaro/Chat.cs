@@ -13,13 +13,9 @@ namespace GameCaro
     {
         public Chat()
         {
-            
             InitializeComponent();
-
         }
         #region Control
-
-        
         private void kaomojiPBox_Click(object sender, EventArgs e)
         {
             if (!kaomojiList.Visible)
@@ -53,26 +49,6 @@ namespace GameCaro
             ListView icon = sender as ListView;
             chatTextBox.Text += icon.FocusedItem.Text;
         }
-
-        #endregion
-        #region Socket
-        private void sendPBox_Click(object sender, EventArgs e)
-        {
-            chatDisplay.Text += "You: " + chatTextBox.Text + "\n";
-            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), chatTextBox.Text));
-            chatTextBox.Clear();
-        }
-
-        #endregion
-
-        private void chatTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyData == Keys.Enter)
-            {
-                sendPBox_Click(null, null);
-            }
-        }
-
         private void tempSendPBox_MouseHover(object sender, EventArgs e)
         {
             tempSendPBox.Hide();
@@ -82,5 +58,39 @@ namespace GameCaro
         {
             tempSendPBox.Show();
         }
+        #endregion
+        #region Socket
+        private void sendPBox_Click(object sender, EventArgs e)
+        {
+            chatDisplay.Text += "You: " + chatTextBox.Text + "\n";
+            GameManager.Socket.Send(new SocketData((int)Socket_Commmad.CHAT, new Point(), chatTextBox.Text));
+            chatTextBox.Clear();
+        }
+        bool cancelEnterPress = false;
+        private void chatTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                sendPBox_Click(null, null);
+                cancelEnterPress = true;
+            }
+        }
+        private void chatTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cancelEnterPress)
+            {
+                e.Handled = true;
+                chatTextBox.Clear();
+                cancelEnterPress = false;
+            }
+        }
+        private void chatDisplay_TextChanged(object sender, EventArgs e)
+        {
+            // set the current caret position to the end
+            chatDisplay.SelectionStart = chatDisplay.Text.Length;
+            // scroll it automatically
+            chatDisplay.ScrollToCaret();
+        }
+        #endregion
     }
 }

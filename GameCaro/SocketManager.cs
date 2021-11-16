@@ -14,7 +14,7 @@ namespace GameCaro
     {
 
         #region Sever
-        Socket sever;
+        public Socket sever;
         public void CreateServer()
         {
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
@@ -29,9 +29,8 @@ namespace GameCaro
             acceptClient.Start();
         }
         #endregion
-
         #region Client
-        Socket client;
+        public Socket client = null;
         public bool ConnectServer()
         {
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
