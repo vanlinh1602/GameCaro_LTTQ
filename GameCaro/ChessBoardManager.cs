@@ -44,14 +44,12 @@ namespace GameCaro
         }
         public Panel Chess_Board { get => chess_Board; set => chess_Board = value; }
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
-        public Stack<Point> StackUndo { get => stackUndo; set => stackUndo = value; }
 
         List<Player> players = new List<Player>()
         {
             new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\P1.jpg")),
             new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\P2.jpg"))
         };
-        private Stack<Point> stackUndo = new Stack<Point>();
         #endregion
 
         #region Initialize
@@ -96,17 +94,6 @@ namespace GameCaro
                 oldBnt.Width = 0;
             }
         }
-
-        internal void Undo()
-        {
-            if (StackUndo.Count != 0) 
-            {
-                Point point = StackUndo.Pop();
-                matrix[point.X][point.Y].BackgroundImage = null;
-                ChangePlayer();
-            }
-        }
-
         private void ChangePlayer()
         {
             Player.turn = Player.turn == 1 ? 0 : 1;
@@ -119,7 +106,6 @@ namespace GameCaro
             ChangePlayer();
             int x = int.Parse(bnt.Tag.ToString());
             int y = matrix[x].IndexOf(bnt);
-            StackUndo.Push(new Point(x,y));
             if (playerMark != null)
             {
                 playerMark(this, new EvenSentPoint(new Point(x,y)));
@@ -130,6 +116,7 @@ namespace GameCaro
             Button bnt = sender as Button;
             Chess_Board.Enabled = false;
             ChangeImageAndChangePlayer(bnt);
+            bnt.Enabled = false;
             CheckEndGame(bnt);
             if (FindWiner)
             {
@@ -154,9 +141,7 @@ namespace GameCaro
                 return;
             btn.BackgroundImage = players[Player.turn].Avatar;
             ChangePlayer();
-            int x = int.Parse(btn.Tag.ToString());
-            int y = matrix[x].IndexOf(btn);
-            StackUndo.Push(new Point(x, y));
+            btn.Enabled = false;
             CheckEndGame(btn);
             if (FindWiner)
             {
