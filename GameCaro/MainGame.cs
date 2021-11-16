@@ -19,7 +19,7 @@ namespace GameCaro
         Winner formWinner = new Winner();
         Loser formLoser = new Loser();
         bool isMoreNewGame = false;
-        bool checkPlayerOut = false;
+        bool isPlayerConnect = false;
         public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
@@ -45,6 +45,7 @@ namespace GameCaro
                     }
                     this.Invoke((MethodInvoker)(() =>
                     {
+                        isPlayerConnect = true;
                         Listen();
                     }));
                 });
@@ -64,7 +65,7 @@ namespace GameCaro
             exit.ShowDialog();
             if (GameManager.checkExitGame)
             {
-                if(!checkPlayerOut)
+                if(isPlayerConnect)
                     GameManager.Socket.Send(new SocketData((int)Socket_Commmad.QUIT, new Point(), ""));
                 Close();
             }
@@ -204,7 +205,7 @@ namespace GameCaro
                 case (int)Socket_Commmad.QUIT:
                     MessageBox.Show("Player has exited", "Notification");
                     Chess_Board.Enabled = false;
-                    checkPlayerOut = true;
+                    isPlayerConnect = false;
                     break;
                 case (int)Socket_Commmad.CHAT:
                     formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
