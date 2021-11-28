@@ -63,16 +63,6 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap aiko_send_button {
-            get {
-                object obj = ResourceManager.GetObject("aiko-send-button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap anime_happy {
             get {
                 object obj = ResourceManager.GetObject("anime-happy", resourceCulture);
@@ -336,6 +326,26 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap Tutorial {
             get {
                 object obj = ResourceManager.GetObject("Tutorial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UIForPlayer1 {
+            get {
+                object obj = ResourceManager.GetObject("UIForPlayer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UIForPlayer2 {
+            get {
+                object obj = ResourceManager.GetObject("UIForPlayer2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

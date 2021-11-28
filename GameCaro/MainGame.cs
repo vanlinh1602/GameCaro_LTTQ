@@ -243,8 +243,12 @@ namespace GameCaro
             }
 
         }
+
         #endregion
 
-
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.Size.Width.ToString());
+        }
     }
 }

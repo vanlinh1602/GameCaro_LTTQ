@@ -9,15 +9,15 @@ namespace GameCaro
     {
         public static int turn = 0;
         string name;
-        Image avatar;
+        Image chess;
         public int Turn { get => turn; set => turn = value; }
         public string Name { get => name; set => name = value; }
-        public Image Avatar { get => avatar; set => avatar = value; }
+        public Image Chess { get => chess; set => chess = value; }
 
-        public Player(string name, Image avatar)
+        public Player(string name, Image chess)
         {
             this.Name = name;
-            this.Avatar = avatar;
+            this.Chess = chess;
         }
     }
 }

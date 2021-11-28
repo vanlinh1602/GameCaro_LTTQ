@@ -20,7 +20,6 @@ namespace GameCaro
             this.location = location;
             this.message = message;
         }
-        
     }
     public enum Socket_Commmad
     {

@@ -12,7 +12,6 @@ namespace GameCaro
 {
     class SocketManager
     {
-
         #region Sever
         public Socket sever;
         public void CreateServer()
@@ -47,9 +46,8 @@ namespace GameCaro
             
         }
         #endregion
-
         #region Both
-        public int PORT = 9999;
+        public int PORT = 8000;
         public string IP = "";
         public int Leght = 1024;
         public bool Send(object data)
@@ -63,7 +61,6 @@ namespace GameCaro
             bool isOK = ReceiveData(client, dataReceive);
             return DeserializeData(dataReceive);
         }
-
         private bool SendData(Socket taget ,byte[] data)
         {
             return taget.Send(data) == 1 ? true : false;

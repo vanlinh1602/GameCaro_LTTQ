@@ -10,15 +10,21 @@ namespace GameCaro
     public class ChessBoardManager
     {
         #region Properties
-        public static int Width = 28;
-        public static int Height = 20;
-        public static int Chess_Width = 31;
+        public static int Width = 60;
+        public static int Height = 40;
+        public static int Chess_Width = 30;
         public static int Chess_Height = 30;
         public int PlayerWin;
         public bool FindWiner;
         private Panel chess_Board = new Panel();
-        List<List<Button>> matrix;
+        private List<List<Button>> matrix;
+        private List<Player> players = new List<Player>()
+        {
+            new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\P1.jpg")),
+            new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\P2.jpg"))
+        };
         event EventHandler<EvenSentPoint> playerMark;
+        event EventHandler<EventPointWiner> getPointForWiner;
         public event EventHandler<EvenSentPoint> PlayerMark
         {
             add
@@ -30,7 +36,6 @@ namespace GameCaro
                 playerMark -= value;
             }
         }
-        event EventHandler<EventPointWiner> getPointForWiner;
         public event EventHandler<EventPointWiner> GetPointForWiner
         {
             add
@@ -44,12 +49,6 @@ namespace GameCaro
         }
         public Panel Chess_Board { get => chess_Board; set => chess_Board = value; }
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
-
-        List<Player> players = new List<Player>()
-        {
-            new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\P1.jpg")),
-            new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\P2.jpg"))
-        };
         #endregion
 
         #region Initialize
@@ -84,7 +83,7 @@ namespace GameCaro
                         BackgroundImageLayout = ImageLayout.Stretch,
                         Tag = i.ToString(),
                     };
-                    bnt.Click += Bnt_Click;
+                    bnt.Click += Btn_Click;
                     Chess_Board.Controls.Add(bnt);
                     oldBnt = bnt;
                     matrix[i].Add(bnt);
@@ -102,7 +101,7 @@ namespace GameCaro
         {
             if (bnt.BackgroundImage != null)
                 return;
-            bnt.BackgroundImage = players[Player.turn].Avatar;
+            bnt.BackgroundImage = players[Player.turn].Chess;
             ChangePlayer();
             int x = int.Parse(bnt.Tag.ToString());
             int y = matrix[x].IndexOf(bnt);
@@ -111,7 +110,7 @@ namespace GameCaro
                 playerMark(this, new EvenSentPoint(new Point(x,y)));
             }
         }
-        private void Bnt_Click(object sender, EventArgs e)
+        private void Btn_Click(object sender, EventArgs e)
         {
             Button bnt = sender as Button;
             Chess_Board.Enabled = false;
@@ -139,7 +138,7 @@ namespace GameCaro
             Button btn = matrix[point.X][point.Y];
             if (btn.BackgroundImage != null)
                 return;
-            btn.BackgroundImage = players[Player.turn].Avatar;
+            btn.BackgroundImage = players[Player.turn].Chess;
             ChangePlayer();
             btn.Enabled = false;
             CheckEndGame(btn);
