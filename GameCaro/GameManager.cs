@@ -14,7 +14,7 @@ namespace GameCaro
         public static bool CheckOpenGame = false;
         public static string IP;
         public static bool isSever;
-        public static SocketManager Socket;
+        public static SocketManager Socket = new SocketManager();
         public static bool checkExitGame = false;
     }
 }

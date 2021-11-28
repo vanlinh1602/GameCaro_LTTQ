@@ -47,8 +47,8 @@ namespace GameCaro
         }
         #endregion
         #region Both
-        public int PORT = 8000;
-        public string IP = "";
+        public int PORT = 80;
+        public string IP;
         public int Leght = 1024;
         public bool Send(object data)
         {

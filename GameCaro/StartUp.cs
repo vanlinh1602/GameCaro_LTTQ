@@ -23,7 +23,7 @@ namespace GameCaro
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             connect.ShowDialog();
-            if(!String.IsNullOrEmpty(GameManager.IP))
+            if(!String.IsNullOrEmpty(GameManager.Socket.IP))
                 Close();
         }
 

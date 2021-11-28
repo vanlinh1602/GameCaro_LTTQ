@@ -20,18 +20,18 @@ namespace GameCaro
             {
                 TbIP.Text = SocketManager.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
-            GameManager.Socket.IP = TbIP.Text;
+
         }
 
         private void PBConnect_Click(object sender, EventArgs e)
         {
+            GameManager.Socket.IP = TbIP.Text;
             if (!GameManager.Socket.ConnectServer())
             {
                 MessageBox.Show("Không tồn tại sever.");
             }
             else
             {
-                GameManager.IP = TbIP.Text;
                 GameManager.CheckOpenGame = true;
                 GameManager.isSever = false;
                 Hide();
@@ -40,6 +40,7 @@ namespace GameCaro
 
         private void PBCreate_Click(object sender, EventArgs e)
         {
+            GameManager.Socket.IP = TbIP.Text;
             GameManager.Socket.CreateServer();
             GameManager.IP = TbIP.Text;
             GameManager.isSever = true;
