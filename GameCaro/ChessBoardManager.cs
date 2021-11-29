@@ -15,6 +15,7 @@ namespace GameCaro
         public static int Chess_Width = 30;
         public static int Chess_Height = 30;
         public static bool isAllow;
+        SoundPlayer sound;
         public int PlayerWin;
         public bool FindWiner;
         private Panel chess_Board = new Panel();
@@ -162,6 +163,19 @@ namespace GameCaro
                 
             }
         }
+        void VoiceWarring()
+        {
+            if(Player.turn == 1)
+            {
+                sound = new SoundPlayer(Application.StartupPath + @"\Resources\Sound1.wav");
+                sound.Play();
+            }
+            else
+            {
+                sound = new SoundPlayer(Application.StartupPath + @"\Resources\Sound2.wav");
+                sound.Play();
+            }
+        }
         private void CheckEndGame(Button bnt)
         {
             if (isEndGame(bnt))
@@ -202,6 +216,8 @@ namespace GameCaro
                 else
                     break;
             }
+            if (countUp + countDown == 4)
+                VoiceWarring();
             return countUp + countDown == 5 ? true : false;
         }
         private bool isEndPrimary(object btn)
@@ -233,6 +249,8 @@ namespace GameCaro
                 else
                     break;
             }
+            if (countUp + countDown == 4)
+                VoiceWarring();
             return countUp + countDown == 5 ? true : false;
         }
         private bool isEndVertical(object btn)
@@ -261,6 +279,8 @@ namespace GameCaro
                 else
                     break;
             }
+            if (countLeft + countRight == 4)
+                VoiceWarring();
             return countLeft + countRight == 5 ? true : false;
         }
         private bool isEndHorizontal(object btn)
@@ -288,6 +308,8 @@ namespace GameCaro
                 else
                     break;
             }
+            if (countLeft + countRight == 4)
+                VoiceWarring();
             return countLeft + countRight == 5 ? true : false;
         }
         #endregion
