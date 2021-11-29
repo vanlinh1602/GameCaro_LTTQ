@@ -32,12 +32,15 @@ namespace GameCaro
             ChangeAvatar(false, 2);
             if (!GameManager.isSever)
             {
-                Chess_Board.Enabled = false;
+                //Chess_Board.Enabled = false;
                 isPlayerConnect = true;
+                label2.Text = GameManager.name;
                 Listen();
+                GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(), GameManager.name));
             }
             else
             {
+                label1.Text = GameManager.name;
                 Thread thread = new Thread(() =>
                 {
                     while (GameManager.Socket.client == null)
@@ -48,6 +51,7 @@ namespace GameCaro
                     {
                         isPlayerConnect = true;
                         Listen();
+                        GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(), GameManager.name));
                     }));
                 });
                 thread.IsBackground = true;
@@ -55,25 +59,51 @@ namespace GameCaro
             }
         }
         #region ControlsInGame
+        private void SetAllow()
+        {
+            if (!ChessBoardManager.isAllow)
+            {
+                if (GameManager.isSever)
+                {
+                    label1.ForeColor = Color.Black;
+                    label2.ForeColor = Color.Crimson;
+                }
+                else
+                {
+                    label1.ForeColor = Color.Crimson;
+                    label2.ForeColor = Color.Black;
+                }
+            }
+            else
+            {
+                if (GameManager.isSever)
+                {
+                    label2.ForeColor = Color.Black;
+                    label1.ForeColor = Color.Crimson;
+                }
+                else
+                {
+                    label2.ForeColor = Color.Crimson;
+                    label1.ForeColor = Color.Black;
+                }
+            }
+            
+        }
         private void ChessBoard_PlayerMark(object sender, EvenSentPoint e)
         {
+            ChessBoardManager.isAllow = false;
+            SetAllow();
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.SEND_POINT, e.Location, ""));
             Listen();
         }
         void Quit()
         {
-            Exit exit = new Exit();
-            exit.ShowDialog();
-            if (GameManager.checkExitGame)
-            {
-                if(isPlayerConnect)
-                    GameManager.Socket.Send(new SocketData((int)Socket_Commmad.QUIT, new Point(), ""));
-                Close();
-            }
+            this.Close();
         }
         void NewGame()
         {
-            if(!isMoreNewGame)
+            SetAllow();
+            if (!isMoreNewGame)
                 Chess_Board.BackgroundImage = null;
             else
             {
@@ -85,6 +115,7 @@ namespace GameCaro
             ChessBoard.DrawChessBoard();
             ChessBoard.FindWiner = false;
         }
+        //Change Avatar Player when New Game
         void ChangeAvatar(bool isSever, int av)
         {
             if (isSever)
@@ -100,6 +131,7 @@ namespace GameCaro
         {
             if (!isPlayerConnect)
                 return;
+            ChessBoardManager.isAllow = true;
             NewGame();
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
             Chess_Board.Enabled = true;
@@ -196,21 +228,33 @@ namespace GameCaro
                 case (int)Socket_Commmad.SEND_POINT:
                     this.Invoke((MethodInvoker)(() =>
                     {
-                        Chess_Board.Enabled = true;
+                        ChessBoardManager.isAllow = true;
+                        SetAllow();
+                        //Chess_Board.Enabled = true;
                         ChessBoard.PlayerMarkClick(data.Location);
                     }));
                     break;
                 case (int)Socket_Commmad.NEW_GAME:
                     this.Invoke((MethodInvoker)(() =>
                     {
+                        ChessBoardManager.isAllow = false;
                         NewGame();
-                        Chess_Board.Enabled = false;
+                        //Chess_Board.Enabled = false;
                     }));
                     break;
+                case (int)Socket_Commmad.SETUP_NAME:
+                    if (GameManager.isSever){
+                        label2.Text = data.Message;
+                    }
+                    else
+                    {
+                        label1.Text = data.Message;
+                    }
+                    break;
                 case (int)Socket_Commmad.QUIT:
-                    MessageBox.Show("Player has exited", "Notification");
                     Chess_Board.Enabled = false;
                     isPlayerConnect = false;
+                    MessageBox.Show("Player has exited", "Notification");
                     break;
                 case (int)Socket_Commmad.CHAT:
                     formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
@@ -246,5 +290,19 @@ namespace GameCaro
 
         #endregion
 
+        private void MainGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Exit exit = new Exit();
+            exit.ShowDialog();
+            if (GameManager.checkExitGame)
+            {
+                if (isPlayerConnect)
+                    GameManager.Socket.Send(new SocketData((int)Socket_Commmad.QUIT, new Point(), ""));
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

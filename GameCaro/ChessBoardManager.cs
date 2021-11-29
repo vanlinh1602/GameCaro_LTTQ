@@ -14,6 +14,7 @@ namespace GameCaro
         public static int Height = 40;
         public static int Chess_Width = 30;
         public static int Chess_Height = 30;
+        public static bool isAllow;
         public int PlayerWin;
         public bool FindWiner;
         private Panel chess_Board = new Panel();
@@ -112,8 +113,10 @@ namespace GameCaro
         }
         private void Btn_Click(object sender, EventArgs e)
         {
+            if (!isAllow)
+                return;
             Button bnt = sender as Button;
-            Chess_Board.Enabled = false;
+            //Chess_Board.Enabled = false;
             ChangeImageAndChangePlayer(bnt);
             bnt.Enabled = false;
             CheckEndGame(bnt);

@@ -12,6 +12,7 @@ namespace GameCaro
         public static StartUp ControlStart;
         public static MainGame ControlGame;
         public static bool CheckOpenGame = false;
+        public static string name;
         public static string IP;
         public static bool isSever;
         public static SocketManager Socket = new SocketManager();

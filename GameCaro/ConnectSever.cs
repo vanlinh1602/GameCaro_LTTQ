@@ -25,6 +25,7 @@ namespace GameCaro
 
         private void PBConnect_Click(object sender, EventArgs e)
         {
+            GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
             if (!GameManager.Socket.ConnectServer())
             {
@@ -40,6 +41,7 @@ namespace GameCaro
 
         private void PBCreate_Click(object sender, EventArgs e)
         {
+            GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
             GameManager.Socket.CreateServer();
             GameManager.IP = TbIP.Text;

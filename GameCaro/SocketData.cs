@@ -24,10 +24,11 @@ namespace GameCaro
     public enum Socket_Commmad
     {
         SEND_POINT,
-        NEW_GAME,
+        NEW_GAME ,
         SURRENDER,
         QUIT,
         AVATARPLAYER,
-        CHAT
+        CHAT,
+        SETUP_NAME
     }
 }
