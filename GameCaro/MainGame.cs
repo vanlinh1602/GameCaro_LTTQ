@@ -129,6 +129,11 @@ namespace GameCaro
         }
         private void PbNewGame_Click(object sender, EventArgs e)
         {
+            if (!ChessBoard.checkEndGame)
+            {
+                if(isMoreNewGame)
+                    return;
+            }
             if (!isPlayerConnect)
                 return;
             ChessBoardManager.isAllow = true;
@@ -139,6 +144,7 @@ namespace GameCaro
             {
                 isMoreNewGame = true;
             }
+            ChessBoard.checkEndGame = false;
         }
         private void PbQuit_Click(object sender, EventArgs e)
         {
@@ -146,6 +152,7 @@ namespace GameCaro
         }
         private void PbSurrender_Click(object sender, EventArgs e)
         {
+            ChessBoard.checkEndGame = true;
             if (!isMoreNewGame)
                 return;
             if (!isPlayerConnect)
@@ -239,6 +246,7 @@ namespace GameCaro
                     {
                         ChessBoardManager.isAllow = false;
                         NewGame();
+                        isMoreNewGame = true;
                         //Chess_Board.Enabled = false;
                     }));
                     break;
@@ -260,6 +268,7 @@ namespace GameCaro
                     formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
                     break;
                 case (int)Socket_Commmad.SURRENDER:
+                    ChessBoard.checkEndGame = true;
                     ChessBoard_GetPointForWiner(null, new EventPointWiner(int.Parse(data.Message)));
                     Chess_Board.Enabled = false;
                     break;

@@ -18,6 +18,7 @@ namespace GameCaro
         public static bool isAllow;
         public int PlayerWin;
         public bool FindWiner;
+        public bool checkEndGame = false;
         private Panel chess_Board = new Panel();
         private List<List<Button>> matrix;
         private List<Player> players = new List<Player>()
@@ -168,6 +169,7 @@ namespace GameCaro
             if (isEndGame(bnt))
             {
                 FindWiner = true;
+                checkEndGame = true;
             }
         }
         private bool isEndGame(Button btn)
