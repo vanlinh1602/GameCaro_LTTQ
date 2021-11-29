@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,12 @@ namespace GameCaro
             Application.SetCompatibleTextRenderingDefault(false);
             GameManager.Socket = new SocketManager();
             GameManager.ControlStart = new StartUp();
+            Thread thread = new Thread(() =>
+            {
+                GameManager.sound.PlaySync();
+            });
+            thread.IsBackground = true;
+            thread.Start();
             Application.Run(GameManager.ControlStart);
             if (GameManager.CheckOpenGame)
             {

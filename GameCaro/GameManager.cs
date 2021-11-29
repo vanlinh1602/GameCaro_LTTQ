@@ -4,11 +4,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using Timer = System.Windows.Forms.Timer;
+using System.Media;
 
 namespace GameCaro
 {
     class GameManager
     {
+        public static SoundPlayer sound = new SoundPlayer(Application.StartupPath + @"\Resources\MusicInGame.wav");
         public static StartUp ControlStart;
         public static MainGame ControlGame;
         public static bool CheckOpenGame = false;
