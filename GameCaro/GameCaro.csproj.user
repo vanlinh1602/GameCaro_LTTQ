@@ -16,9 +16,6 @@
     <Compile Update="CustomRTB.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="TranslucentPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Tutorial.cs">
       <SubType>Form</SubType>
     </Compile>
