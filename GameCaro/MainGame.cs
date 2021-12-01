@@ -237,7 +237,6 @@ namespace GameCaro
                     {
                         ChessBoardManager.isAllow = true;
                         SetAllow();
-                        //Chess_Board.Enabled = true;
                         ChessBoard.PlayerMarkClick(data.Location);
                     }));
                     break;
@@ -247,7 +246,6 @@ namespace GameCaro
                         ChessBoardManager.isAllow = false;
                         NewGame();
                         isMoreNewGame = true;
-                        //Chess_Board.Enabled = false;
                     }));
                     break;
                 case (int)Socket_Commmad.SETUP_NAME:

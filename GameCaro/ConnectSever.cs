@@ -43,7 +43,15 @@ namespace GameCaro
         {
             GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
-            GameManager.Socket.CreateServer();
+            try
+            {
+                GameManager.Socket.CreateServer();
+            }
+            catch 
+            {
+                MessageBox.Show("Đã tồn tại server");
+                return;
+            }
             GameManager.IP = TbIP.Text;
             GameManager.isSever = true;
             GameManager.CheckOpenGame = true;

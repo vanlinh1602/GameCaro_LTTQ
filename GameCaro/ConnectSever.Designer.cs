@@ -106,6 +106,7 @@ namespace GameCaro
             this.Controls.Add(this.PBConnect);
             this.Controls.Add(this.TbIP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConnectSever";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect";

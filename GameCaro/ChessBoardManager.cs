@@ -59,9 +59,7 @@ namespace GameCaro
         {
             this.chess_Board = chess_Board;
         }
-
         #endregion
-
         #region Methods
         public void DrawChessBoard()
         {
