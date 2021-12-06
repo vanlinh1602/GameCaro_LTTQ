@@ -18,6 +18,7 @@ namespace GameCaro
         Chat formChat;
         Winner formWinner = new Winner();
         Loser formLoser = new Loser();
+        Setting setting = new Setting();
         bool isMoreNewGame = false;
         public static bool isPlayerConnect = false;
         public MainGame()
@@ -146,11 +147,7 @@ namespace GameCaro
             }
             ChessBoard.checkEndGame = false;
         }
-        private void PbQuit_Click(object sender, EventArgs e)
-        {
-            Quit();
-        }
-        private void PbSurrender_Click(object sender, EventArgs e)
+        private void Surrender()
         {
             ChessBoard.checkEndGame = true;
             if (!isMoreNewGame)
@@ -312,24 +309,14 @@ namespace GameCaro
             }
         }
 
-        private void VolumeBTN_Click(object sender, EventArgs e)
+        private void SettingBTN_Click(object sender, EventArgs e)
         {
-            if (!ChangVolume.Visible)
-                ChangVolume.Visible = true;
-            else
+            setting.ShowDialog();
+            if (setting.CheckSurrender)
             {
-                ChangVolume.Visible = false;
+                Surrender();
+                setting.CheckSurrender = false;
             }
-        }
-
-        private void UpVolume_Click(object sender, EventArgs e)
-        {
-            GameManager.media.VolumeUp();
-        }
-
-        private void DownVolume_Click(object sender, EventArgs e)
-        {
-            GameManager.media.VolumeDown();
         }
     }
 }

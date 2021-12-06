@@ -16,6 +16,9 @@
     <Compile Update="CustomRTB.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Tutorial.cs">
       <SubType>Form</SubType>
     </Compile>
