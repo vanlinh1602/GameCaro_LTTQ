@@ -318,5 +318,10 @@ namespace GameCaro
                 setting.CheckSurrender = false;
             }
         }
+
+        private void GachaBTN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

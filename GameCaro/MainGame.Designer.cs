@@ -146,6 +146,7 @@ namespace GameCaro
             this.GachaBTN.Size = new System.Drawing.Size(70, 70);
             this.GachaBTN.TabIndex = 3;
             this.GachaBTN.TabStop = false;
+            this.GachaBTN.Click += new System.EventHandler(this.GachaBTN_Click);
             // 
             // PbChat
             // 

@@ -37,7 +37,7 @@ namespace GameCaro
             this.ChangVolume = new System.Windows.Forms.Panel();
             this.UpVolume = new System.Windows.Forms.PictureBox();
             this.DownVolume = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MusicBTN = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbSurrender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistoryBTN)).BeginInit();
@@ -45,14 +45,15 @@ namespace GameCaro
             this.ChangVolume.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MusicBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // PbSurrender
             // 
+            this.PbSurrender.BackColor = System.Drawing.Color.Transparent;
             this.PbSurrender.BackgroundImage = global::GameCaro.Properties.Resources.DauHang;
             this.PbSurrender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSurrender.Location = new System.Drawing.Point(13, 12);
+            this.PbSurrender.Location = new System.Drawing.Point(137, 83);
             this.PbSurrender.Name = "PbSurrender";
             this.PbSurrender.Size = new System.Drawing.Size(70, 70);
             this.PbSurrender.TabIndex = 3;
@@ -61,20 +62,22 @@ namespace GameCaro
             // 
             // PbQuit
             // 
-            this.PbQuit.BackgroundImage = global::GameCaro.Properties.Resources.quit;
+            this.PbQuit.BackColor = System.Drawing.Color.Transparent;
+            this.PbQuit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbQuit.BackgroundImage")));
             this.PbQuit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbQuit.Location = new System.Drawing.Point(95, 199);
+            this.PbQuit.Location = new System.Drawing.Point(108, 449);
             this.PbQuit.Name = "PbQuit";
-            this.PbQuit.Size = new System.Drawing.Size(70, 70);
+            this.PbQuit.Size = new System.Drawing.Size(140, 54);
             this.PbQuit.TabIndex = 2;
             this.PbQuit.TabStop = false;
             this.PbQuit.Click += new System.EventHandler(this.PbQuit_Click);
             // 
             // HistoryBTN
             // 
+            this.HistoryBTN.BackColor = System.Drawing.Color.Transparent;
             this.HistoryBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("HistoryBTN.BackgroundImage")));
             this.HistoryBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HistoryBTN.Location = new System.Drawing.Point(180, 12);
+            this.HistoryBTN.Location = new System.Drawing.Point(137, 172);
             this.HistoryBTN.Name = "HistoryBTN";
             this.HistoryBTN.Size = new System.Drawing.Size(70, 70);
             this.HistoryBTN.TabIndex = 1;
@@ -82,9 +85,10 @@ namespace GameCaro
             // 
             // VolumeBTN
             // 
+            this.VolumeBTN.BackColor = System.Drawing.Color.Transparent;
             this.VolumeBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VolumeBTN.BackgroundImage")));
             this.VolumeBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.VolumeBTN.Location = new System.Drawing.Point(13, 103);
+            this.VolumeBTN.Location = new System.Drawing.Point(74, 348);
             this.VolumeBTN.Name = "VolumeBTN";
             this.VolumeBTN.Size = new System.Drawing.Size(70, 68);
             this.VolumeBTN.TabIndex = 0;
@@ -95,9 +99,9 @@ namespace GameCaro
             this.ChangVolume.BackColor = System.Drawing.Color.Transparent;
             this.ChangVolume.Controls.Add(this.UpVolume);
             this.ChangVolume.Controls.Add(this.DownVolume);
-            this.ChangVolume.Location = new System.Drawing.Point(95, 103);
+            this.ChangVolume.Location = new System.Drawing.Point(168, 352);
             this.ChangVolume.Name = "ChangVolume";
-            this.ChangVolume.Size = new System.Drawing.Size(131, 70);
+            this.ChangVolume.Size = new System.Drawing.Size(131, 64);
             this.ChangVolume.TabIndex = 10;
             // 
             // UpVolume
@@ -109,33 +113,39 @@ namespace GameCaro
             this.UpVolume.Size = new System.Drawing.Size(50, 51);
             this.UpVolume.TabIndex = 10;
             this.UpVolume.TabStop = false;
+            this.UpVolume.Click += new System.EventHandler(this.UpVolume_Click);
             // 
             // DownVolume
             // 
             this.DownVolume.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DownVolume.BackgroundImage")));
             this.DownVolume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DownVolume.Location = new System.Drawing.Point(3, 7);
+            this.DownVolume.Location = new System.Drawing.Point(5, 6);
             this.DownVolume.Name = "DownVolume";
             this.DownVolume.Size = new System.Drawing.Size(51, 51);
             this.DownVolume.TabIndex = 11;
             this.DownVolume.TabStop = false;
+            this.DownVolume.Click += new System.EventHandler(this.DownVolume_Click);
             // 
-            // pictureBox1
+            // MusicBTN
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(95, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.MusicBTN.BackColor = System.Drawing.Color.Transparent;
+            this.MusicBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MusicBTN.BackgroundImage")));
+            this.MusicBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MusicBTN.Location = new System.Drawing.Point(137, 259);
+            this.MusicBTN.Name = "MusicBTN";
+            this.MusicBTN.Size = new System.Drawing.Size(70, 70);
+            this.MusicBTN.TabIndex = 11;
+            this.MusicBTN.TabStop = false;
+            this.MusicBTN.Click += new System.EventHandler(this.MusicBTN_Click);
             // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 288);
-            this.Controls.Add(this.pictureBox1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(360, 527);
+            this.Controls.Add(this.MusicBTN);
             this.Controls.Add(this.PbQuit);
             this.Controls.Add(this.PbSurrender);
             this.Controls.Add(this.ChangVolume);
@@ -145,6 +155,7 @@ namespace GameCaro
             this.Name = "Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Setting_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PbSurrender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistoryBTN)).EndInit();
@@ -152,7 +163,7 @@ namespace GameCaro
             this.ChangVolume.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UpVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MusicBTN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,6 +176,6 @@ namespace GameCaro
         private System.Windows.Forms.Panel ChangVolume;
         private System.Windows.Forms.PictureBox UpVolume;
         private System.Windows.Forms.PictureBox DownVolume;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox MusicBTN;
     }
 }
