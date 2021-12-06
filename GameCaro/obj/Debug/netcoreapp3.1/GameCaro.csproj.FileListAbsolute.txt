@@ -209,3 +209,4 @@ C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\Interop.WM
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.ResolveComReference.cache
 C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.Setting.resources
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.GachaForm.resources

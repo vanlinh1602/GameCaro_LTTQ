@@ -19,6 +19,7 @@ namespace GameCaro
         Winner formWinner = new Winner();
         Loser formLoser = new Loser();
         Setting setting = new Setting();
+        GachaForm gacha = new GachaForm();
         bool isMoreNewGame = false;
         public static bool isPlayerConnect = false;
         public MainGame()
@@ -318,10 +319,10 @@ namespace GameCaro
                 setting.CheckSurrender = false;
             }
         }
-
         private void GachaBTN_Click(object sender, EventArgs e)
         {
-
+            gacha = new GachaForm();
+            gacha.Show();
         }
     }
 }

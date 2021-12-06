@@ -10,6 +10,9 @@
     <Compile Update="Exit.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GachaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Loser.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -143,6 +143,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CloseChest {
+            get {
+                object obj = ResourceManager.GetObject("CloseChest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ConnectBTN {
             get {
                 object obj = ResourceManager.GetObject("ConnectBTN", resourceCulture);
@@ -206,6 +216,26 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap New_game {
             get {
                 object obj = ResourceManager.GetObject("New-game", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OpenBTN {
+            get {
+                object obj = ResourceManager.GetObject("OpenBTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OpenChest {
+            get {
+                object obj = ResourceManager.GetObject("OpenChest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
