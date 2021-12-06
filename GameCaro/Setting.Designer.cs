@@ -82,6 +82,7 @@ namespace GameCaro
             this.HistoryBTN.Size = new System.Drawing.Size(70, 70);
             this.HistoryBTN.TabIndex = 1;
             this.HistoryBTN.TabStop = false;
+            this.HistoryBTN.Click += new System.EventHandler(this.HistoryBTN_Click);
             // 
             // VolumeBTN
             // 

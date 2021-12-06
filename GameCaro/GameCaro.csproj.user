@@ -13,6 +13,9 @@
     <Compile Update="GachaForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="HistoryGacha.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Loser.cs">
       <SubType>Form</SubType>
     </Compile>

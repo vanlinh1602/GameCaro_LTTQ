@@ -11,6 +11,7 @@ namespace GameCaro
     public partial class Setting : Form
     {
         public bool CheckSurrender = false;
+        HistoryGacha history;
         public Setting()
         {
             InitializeComponent();
@@ -58,6 +59,12 @@ namespace GameCaro
                 GameManager.media.url = openFile.FileName;
                 GameManager.media.Start();
             }    
+        }
+
+        private void HistoryBTN_Click(object sender, EventArgs e)
+        {
+            history = new HistoryGacha();
+            history.ShowDialog();
         }
     }
 }

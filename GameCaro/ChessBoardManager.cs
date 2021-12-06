@@ -61,6 +61,17 @@ namespace GameCaro
         }
         #endregion
         #region Methods
+        public void ChangeChess(bool isSever, int items)
+        {
+            if (isSever)
+            {
+                players[0].Chess = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + items.ToString() + @".png");
+            }
+            else
+            {
+                players[1].Chess = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + items.ToString() + @".png");
+            }
+        }
         public void DrawChessBoard()
         {
             matrix = new List<List<Button>>();

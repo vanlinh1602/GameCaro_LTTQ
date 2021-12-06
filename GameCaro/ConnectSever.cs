@@ -22,11 +22,19 @@ namespace GameCaro
             }
 
         }
-
+        void AddPlayerToDatabase()
+        {
+            try
+            {
+                GameManager.database.AddPlayer(TbName.Text);
+            }
+            catch { }
+        }
         private void PBConnect_Click(object sender, EventArgs e)
         {
             GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
+            AddPlayerToDatabase();
             if (!GameManager.Socket.ConnectServer())
             {
                 MessageBox.Show("Không tồn tại sever.");
@@ -55,7 +63,9 @@ namespace GameCaro
             GameManager.IP = TbIP.Text;
             GameManager.isSever = true;
             GameManager.CheckOpenGame = true;
+            AddPlayerToDatabase();
             Hide();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

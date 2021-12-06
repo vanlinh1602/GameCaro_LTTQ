@@ -10,6 +10,19 @@ namespace GameCaro
 {
     public partial class GachaForm : Form
     {
+        int getImage;
+        event EventHandler<EventChangeChess> changeItems;
+        public event EventHandler<EventChangeChess> ChangeItems
+        {
+            add
+            {
+                changeItems += value;
+            }
+            remove
+            {
+                changeItems -= value;
+            }
+        }
         public GachaForm()
         {
             InitializeComponent();
@@ -30,8 +43,9 @@ namespace GameCaro
         {
             Chest.Image = Image.FromFile(Application.StartupPath + @"\Resources\OpenChest1.png");
             Character.Visible = true;
-            int getImage = RandomImage();
+            getImage = RandomImage();
             Character.Image = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + getImage.ToString() + @".png");
+            GameManager.database.AddItems(GameManager.name, getImage.ToString());
             Chest.Enabled = false;
         }
 
@@ -41,6 +55,25 @@ namespace GameCaro
             Character.Visible = false;
             Chest.Image = Image.FromFile(Application.StartupPath + @"\Resources\CloseChest1.png");
             MessOpen.Visible = false;
+            if (changeItems != null)
+                changeItems(this, new EventChangeChess(getImage));
+        }
+
+        private void GachaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (changeItems != null)
+            //    changeItems(this, new EventChangeChess(getImage));
+        }
+    }
+
+    public class EventChangeChess : EventArgs
+    {
+        int items;
+        public int Items { get => items; set => items = value; }
+
+        public EventChangeChess(int items)
+        {
+            this.items = items;
         }
     }
 }

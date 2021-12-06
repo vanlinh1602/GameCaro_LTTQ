@@ -117,6 +117,7 @@ namespace GameCaro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GachaForm";
             this.Text = "Gacha";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GachaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.OpenBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Character)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chest)).EndInit();

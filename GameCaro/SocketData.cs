@@ -29,6 +29,7 @@ namespace GameCaro
         QUIT,
         AVATARPLAYER,
         CHAT,
-        SETUP_NAME
+        SETUP_NAME,
+        CHANGE_CHESS
     }
 }

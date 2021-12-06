@@ -28,6 +28,7 @@ namespace GameCaro
             InitializeComponent();
             ChessBoard = new ChessBoardManager(Chess_Board);
             formChat = new Chat();
+            gacha.ChangeItems += Gacha_ChangeItems;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
             ChangeAvatar(true, 1);
@@ -59,6 +60,12 @@ namespace GameCaro
                 thread.IsBackground = true;
                 thread.Start();
             }
+        }
+
+        private void Gacha_ChangeItems(object sender, EventChangeChess e)
+        {
+            ChessBoard.ChangeChess(GameManager.isSever, e.Items);
+            GameManager.Socket.Send(new SocketData((int)(Socket_Commmad.CHANGE_CHESS), new Point(), e.Items.ToString()));
         }
         #region ControlsInGame
         private void SetAllow()
@@ -271,6 +278,12 @@ namespace GameCaro
                 case (int)Socket_Commmad.AVATARPLAYER:
                     ChangeAvatar(!GameManager.isSever, int.Parse(data.Message));
                     break;
+                case (int)Socket_Commmad.CHANGE_CHESS:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        ChessBoard.ChangeChess(!GameManager.isSever, int.Parse(data.Message));
+                    }));
+                    break;
             }
             Listen();
         }
@@ -321,7 +334,7 @@ namespace GameCaro
         }
         private void GachaBTN_Click(object sender, EventArgs e)
         {
-            gacha = new GachaForm();
+            //gacha = new GachaForm();
             gacha.Show();
         }
     }
