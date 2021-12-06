@@ -311,5 +311,25 @@ namespace GameCaro
                 e.Cancel = true;
             }
         }
+
+        private void VolumeBTN_Click(object sender, EventArgs e)
+        {
+            if (!ChangVolume.Visible)
+                ChangVolume.Visible = true;
+            else
+            {
+                ChangVolume.Visible = false;
+            }
+        }
+
+        private void UpVolume_Click(object sender, EventArgs e)
+        {
+            GameManager.media.VolumeUp();
+        }
+
+        private void DownVolume_Click(object sender, EventArgs e)
+        {
+            GameManager.media.VolumeDown();
+        }
     }
 }

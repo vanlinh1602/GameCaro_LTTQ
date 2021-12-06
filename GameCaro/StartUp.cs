@@ -19,7 +19,7 @@ namespace GameCaro
             connect = new ConnectSever();
         }
 
-
+        #region Controls
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             connect.ShowDialog();
@@ -46,5 +46,6 @@ namespace GameCaro
             thread.IsBackground = true;
             thread.Start();
         }
+        #endregion
     }
 }

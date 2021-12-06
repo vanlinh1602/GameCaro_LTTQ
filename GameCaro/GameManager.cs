@@ -10,7 +10,7 @@ namespace GameCaro
 {
     class GameManager
     {
-        public static SoundPlayer sound = new SoundPlayer(Application.StartupPath + @"\Resources\MusicInGame.wav");
+        public static MediaManager media = new MediaManager();
         public static StartUp ControlStart;
         public static MainGame ControlGame;
         public static bool CheckOpenGame = false;

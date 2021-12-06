@@ -205,3 +205,6 @@ C:\Code\msvsCode\VPProject\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCa
 C:\Code\msvsCode\VPProject\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.dll
 C:\Code\msvsCode\VPProject\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.pdb
 C:\Code\msvsCode\VPProject\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.genruntimeconfig.cache
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\bin\Debug\netcoreapp3.1\Interop.WMPLib.dll
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
+C:\Users\Admin\Desktop\GameCaro_LTTQ\GameCaro\obj\Debug\netcoreapp3.1\GameCaro.csproj.ResolveComReference.cache
