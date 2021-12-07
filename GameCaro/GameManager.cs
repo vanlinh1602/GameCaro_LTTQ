@@ -17,6 +17,7 @@ namespace GameCaro
         public static bool CheckOpenGame = false;
         public static string name;
         public static string nameOpponent;
+        public static int chessOpponent = -1;
         public static string IP;
         public static bool isSever;
         public static SocketManager Socket = new SocketManager();

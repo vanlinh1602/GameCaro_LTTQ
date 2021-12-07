@@ -23,8 +23,8 @@ namespace GameCaro
         private List<List<Button>> matrix;
         private List<Player> players = new List<Player>()
         {
-            new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\P1.jpg")),
-            new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\P2.jpg"))
+            new Player("Player 1", Image.FromFile(Application.StartupPath + @"\Resources\Avatar\-1.png")),
+            new Player("Player 2", Image.FromFile(Application.StartupPath + @"\Resources\Avatar\-2.png"))
         };
         event EventHandler<EvenSentPoint> playerMark;
         event EventHandler<EventPointWiner> getPointForWiner;
@@ -66,7 +66,7 @@ namespace GameCaro
             if (isSever)
             {
                 players[0].Chess = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + items.ToString() + @".png");
-            }
+         }
             else
             {
                 players[1].Chess = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + items.ToString() + @".png");

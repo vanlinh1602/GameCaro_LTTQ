@@ -22,6 +22,7 @@ namespace GameCaro
         GachaForm gacha = new GachaForm();
         bool isMoreNewGame = false;
         public static bool isPlayerConnect = false;
+        int Chess;
         public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
@@ -31,19 +32,21 @@ namespace GameCaro
             gacha.ChangeItems += Gacha_ChangeItems;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
-            ChangeAvatar(true, 1);
-            ChangeAvatar(false, 2);
             if (!GameManager.isSever)
             {
                 //Chess_Board.Enabled = false;
+                ChangeAvatar(false, -2);
                 isPlayerConnect = true;
+                Chess = -2;
                 label2.Text = GameManager.name;
                 Listen();
-                GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(), GameManager.name));
+                GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess,0), GameManager.name));
             }
             else
             {
+                ChangeAvatar(true, -1);
                 label1.Text = GameManager.name;
+                Chess = -1;
                 Thread thread = new Thread(() =>
                 {
                     while (GameManager.Socket.client == null)
@@ -54,7 +57,7 @@ namespace GameCaro
                     {
                         isPlayerConnect = true;
                         Listen();
-                        GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(), GameManager.name));
+                        GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess,0), GameManager.name));
                     }));
                 });
                 thread.IsBackground = true;
@@ -64,8 +67,19 @@ namespace GameCaro
 
         private void Gacha_ChangeItems(object sender, EventChangeChess e)
         {
-            ChessBoard.ChangeChess(GameManager.isSever, e.Items);
-            GameManager.Socket.Send(new SocketData((int)(Socket_Commmad.CHANGE_CHESS), new Point(), e.Items.ToString()));
+            if (e.Items != GameManager.chessOpponent)
+            {
+                Chess = e.Items;
+                ChangeAvatar(GameManager.isSever, Chess);
+                ChessBoard.ChangeChess(GameManager.isSever, Chess);
+                try
+                {
+                    GameManager.Socket.Send(new SocketData((int)(Socket_Commmad.CHANGE_CHESS), new Point(), Chess.ToString()));
+                }
+                catch { }
+            }
+            else
+                MessageBox.Show("Trùng cờ với đối thủ");
         }
         #region ControlsInGame
         private void SetAllow()
@@ -111,16 +125,10 @@ namespace GameCaro
         }
         void NewGame()
         {
+            GachaBTN.Enabled = false;
             SetAllow();
             if (!isMoreNewGame)
                 Chess_Board.BackgroundImage = null;
-            else
-            {
-                Random rag = new Random();
-                int av = rag.Next(1, 8);
-                ChangeAvatar(GameManager.isSever, av);
-                GameManager.Socket.Send(new SocketData((int)Socket_Commmad.AVATARPLAYER, new Point(), av.ToString()));
-            }
             ChessBoard.DrawChessBoard();
             ChessBoard.FindWiner = false;
         }
@@ -147,6 +155,10 @@ namespace GameCaro
                 return;
             ChessBoardManager.isAllow = true;
             NewGame();
+            if (GameManager.isSever)
+                Player.turn = 0;
+            else
+                Player.turn = 1;
             GameManager.Socket.Send(new SocketData((int)Socket_Commmad.NEW_GAME, new Point(), ""));
             Chess_Board.Enabled = true;
             if (!isMoreNewGame)
@@ -191,6 +203,7 @@ namespace GameCaro
         private void ChessBoard_GetPointForWiner(object sender, EventPointWiner e)
         {
             Chess_Board.Enabled = false;
+            GachaBTN.Enabled = true;
             if (e.Winer == 1)
             {
                 PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
@@ -249,6 +262,10 @@ namespace GameCaro
                     this.Invoke((MethodInvoker)(() =>
                     {
                         ChessBoardManager.isAllow = false;
+                        if (!GameManager.isSever)
+                            Player.turn = 0;
+                        else
+                            Player.turn = 1;
                         NewGame();
                         isMoreNewGame = true;
                     }));
@@ -261,6 +278,9 @@ namespace GameCaro
                     {
                         label1.Text = data.Message;
                     }
+                    GameManager.chessOpponent = data.Location.X;
+                    ChangeAvatar(!GameManager.isSever, data.Location.X);
+                    ChessBoard.ChangeChess(!GameManager.isSever, data.Location.X);
                     break;
                 case (int)Socket_Commmad.QUIT:
                     Chess_Board.Enabled = false;
@@ -275,12 +295,11 @@ namespace GameCaro
                     ChessBoard_GetPointForWiner(null, new EventPointWiner(int.Parse(data.Message)));
                     Chess_Board.Enabled = false;
                     break;
-                case (int)Socket_Commmad.AVATARPLAYER:
-                    ChangeAvatar(!GameManager.isSever, int.Parse(data.Message));
-                    break;
                 case (int)Socket_Commmad.CHANGE_CHESS:
                     this.Invoke((MethodInvoker)(() =>
                     {
+                        GameManager.chessOpponent = int.Parse(data.Message);
+                        ChangeAvatar(!GameManager.isSever, int.Parse(data.Message));
                         ChessBoard.ChangeChess(!GameManager.isSever, int.Parse(data.Message));
                     }));
                     break;
@@ -334,8 +353,7 @@ namespace GameCaro
         }
         private void GachaBTN_Click(object sender, EventArgs e)
         {
-            //gacha = new GachaForm();
-            gacha.Show();
+            gacha.ShowDialog();
         }
     }
 }

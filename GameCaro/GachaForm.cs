@@ -61,8 +61,8 @@ namespace GameCaro
 
         private void GachaForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (changeItems != null)
-            //    changeItems(this, new EventChangeChess(getImage));
+            this.Hide();
+            e.Cancel = true;
         }
     }
 
