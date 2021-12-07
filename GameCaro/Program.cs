@@ -27,7 +27,6 @@ namespace GameCaro
                 GameManager.ControlGame = new MainGame();
                 Application.Run(GameManager.ControlGame);
             }
-            //Application.Run(new HistoryGacha());
         }
     }
 }

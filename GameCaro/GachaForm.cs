@@ -45,7 +45,10 @@ namespace GameCaro
             Character.Visible = true;
             getImage = RandomImage();
             Character.Image = Image.FromFile(Application.StartupPath + @"\Resources\Avatar\" + getImage.ToString() + @".png");
-            GameManager.database.AddItems(GameManager.name, getImage.ToString());
+            try
+            {
+                GameManager.database.AddItems(GameManager.name, getImage.ToString());
+            }catch { }
             Chest.Enabled = false;
         }
 
