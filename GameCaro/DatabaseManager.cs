@@ -26,6 +26,7 @@ namespace GameCaro
             connection.Close();
             return data;
         }
+
         public void AddItems(string name, string vatpham)
         {
             SqlConnection connection = new SqlConnection(ConnectionString);
