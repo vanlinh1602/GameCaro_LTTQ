@@ -37,7 +37,7 @@ namespace GameCaro
         int RandomImage()
         {
             Random random = new Random();
-            return random.Next(1, 8);
+            return random.Next(1, 20);
         }
         private void Chest_Click(object sender, EventArgs e)
         {
