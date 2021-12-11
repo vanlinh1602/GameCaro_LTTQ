@@ -23,6 +23,7 @@ namespace GameCaro
         bool isMoreNewGame = false;
         public static bool isPlayerConnect = false;
         int Chess;
+        bool CheckShowChat = false;
         public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
@@ -289,6 +290,13 @@ namespace GameCaro
                     break;
                 case (int)Socket_Commmad.CHAT:
                     formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        if (!formChat.Visible)
+                        {
+                            PbChat_Click(null, null);
+                        }
+                    }));
                     break;
                 case (int)Socket_Commmad.SURRENDER:
                     ChessBoard.checkEndGame = true;
@@ -309,7 +317,6 @@ namespace GameCaro
         #endregion
 
         #region MultiChat
-        bool CheckShowChat = false;
         private void PbChat_Click(object sender, EventArgs e)
         {
             if (!CheckShowChat)
