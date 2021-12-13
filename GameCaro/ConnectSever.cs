@@ -32,6 +32,8 @@ namespace GameCaro
         }
         private void PBConnect_Click(object sender, EventArgs e)
         {
+            if (!CheckName())
+                return;
             GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
             AddPlayerToDatabase();
@@ -49,6 +51,8 @@ namespace GameCaro
 
         private void PBCreate_Click(object sender, EventArgs e)
         {
+            if (!CheckName())
+                return;
             GameManager.name = TbName.Text;
             GameManager.Socket.IP = TbIP.Text;
             try
@@ -67,7 +71,15 @@ namespace GameCaro
             Hide();
 
         }
-
+        bool CheckName()
+        {
+            if (string.IsNullOrEmpty(TbName.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tên");
+                return false;
+            }
+            return true;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Hide();
