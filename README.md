@@ -8,5 +8,4 @@
 7. Multichat
 -- Chưa cập nhập
 
-Một vài lỗi vặt trong game.
-Tính năng detect người sắp thắng
+Link video demo: https://www.youtube.com/watch?v=g1aEGmb1vmU

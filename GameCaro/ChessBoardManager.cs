@@ -214,7 +214,7 @@ namespace GameCaro
                 else
                     break;
             }
-            return countUp + countDown == 5 ? true : false;
+            return countUp + countDown >= 5 ? true : false;
         }
         private bool isEndPrimary(object btn)
         {
@@ -245,7 +245,7 @@ namespace GameCaro
                 else
                     break;
             }
-            return countUp + countDown == 5 ? true : false;
+            return countUp + countDown >= 5 ? true : false;
         }
         private bool isEndVertical(object btn)
         {
@@ -273,7 +273,7 @@ namespace GameCaro
                 else
                     break;
             }
-            return countLeft + countRight == 5 ? true : false;
+            return countLeft + countRight >= 5 ? true : false;
         }
         private bool isEndHorizontal(object btn)
         {
@@ -300,7 +300,7 @@ namespace GameCaro
                 else
                     break;
             }
-            return countLeft + countRight == 5 ? true : false;
+            return countLeft + countRight >= 5 ? true : false;
         }
         #endregion
     }

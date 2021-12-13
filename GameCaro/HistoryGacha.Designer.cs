@@ -43,11 +43,11 @@ namespace GameCaro
             this.HitoryGacha.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.HitoryGacha.BackgroundColor = System.Drawing.Color.Silver;
             this.HitoryGacha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HitoryGacha.Location = new System.Drawing.Point(12, 70);
+            this.HitoryGacha.Location = new System.Drawing.Point(116, 67);
             this.HitoryGacha.Name = "HitoryGacha";
             this.HitoryGacha.RowHeadersWidth = 51;
             this.HitoryGacha.RowTemplate.Height = 29;
-            this.HitoryGacha.Size = new System.Drawing.Size(503, 374);
+            this.HitoryGacha.Size = new System.Drawing.Size(381, 374);
             this.HitoryGacha.TabIndex = 0;
             // 
             // TbName

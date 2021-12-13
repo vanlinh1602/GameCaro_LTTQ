@@ -23,6 +23,7 @@ namespace GameCaro
         bool isMoreNewGame = false;
         public static bool isPlayerConnect = false;
         int Chess;
+        bool CheckShowChat = false;
         public MainGame()
         {
             Icon = new Icon(Application.StartupPath + @"Resources\icon.ico");
@@ -32,6 +33,11 @@ namespace GameCaro
             gacha.ChangeItems += Gacha_ChangeItems;
             ChessBoard.PlayerMark += ChessBoard_PlayerMark;
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
+            CreateNewConnect();
+        }
+
+        void CreateNewConnect()
+        {
             if (!GameManager.isSever)
             {
                 //Chess_Board.Enabled = false;
@@ -40,7 +46,7 @@ namespace GameCaro
                 Chess = -2;
                 label2.Text = GameManager.name;
                 Listen();
-                GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess,0), GameManager.name));
+                GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess, 0), GameManager.name));
             }
             else
             {
@@ -57,14 +63,13 @@ namespace GameCaro
                     {
                         isPlayerConnect = true;
                         Listen();
-                        GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess,0), GameManager.name));
+                        GameManager.Socket.Send(new SocketData(((int)Socket_Commmad.SETUP_NAME), new Point(Chess, 0), GameManager.name));
                     }));
                 });
                 thread.IsBackground = true;
                 thread.Start();
             }
         }
-
         private void Gacha_ChangeItems(object sender, EventChangeChess e)
         {
             if (e.Items != GameManager.chessOpponent)
@@ -283,12 +288,22 @@ namespace GameCaro
                     ChessBoard.ChangeChess(!GameManager.isSever, data.Location.X);
                     break;
                 case (int)Socket_Commmad.QUIT:
-                    Chess_Board.Enabled = false;
-                    isPlayerConnect = false;
-                    MessageBox.Show("Player has exited", "Notification");
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        Chess_Board.Enabled = false;
+                        isPlayerConnect = false;
+                        MessageBox.Show("Player has exited", "Notification");
+                    }));
                     break;
                 case (int)Socket_Commmad.CHAT:
                     formChat.chatDisplay.Text += "Player: " + data.Message + "\n";
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        if (!formChat.Visible)
+                        {
+                            PbChat_Click(null, null);
+                        }
+                    }));
                     break;
                 case (int)Socket_Commmad.SURRENDER:
                     ChessBoard.checkEndGame = true;
@@ -309,7 +324,6 @@ namespace GameCaro
         #endregion
 
         #region MultiChat
-        bool CheckShowChat = false;
         private void PbChat_Click(object sender, EventArgs e)
         {
             if (!CheckShowChat)
