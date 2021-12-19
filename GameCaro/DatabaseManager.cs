@@ -8,7 +8,7 @@ namespace GameCaro
 {
     class DatabaseManager
     {
-        string ConnectionString = @"Data Source=DESKTOP-OQUHPJ9\LINHSQL;Initial Catalog=GameCaro;Integrated Security=True";
+        string ConnectionString = @"Data Source=MSI;Initial Catalog=GameCaro;Integrated Security=True";
         public DatabaseManager()
         {
 
