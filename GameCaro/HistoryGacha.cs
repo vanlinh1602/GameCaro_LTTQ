@@ -31,5 +31,14 @@ namespace GameCaro
             }
             catch { }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HitoryGacha.DataSource = database.GetHistory(TbName.Text);
+            }
+            catch { }
+        }
     }
 }

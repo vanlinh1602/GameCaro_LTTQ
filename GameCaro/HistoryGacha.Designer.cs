@@ -34,8 +34,10 @@ namespace GameCaro
             this.TbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.HitoryGacha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // HitoryGacha
@@ -43,11 +45,11 @@ namespace GameCaro
             this.HitoryGacha.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.HitoryGacha.BackgroundColor = System.Drawing.Color.Silver;
             this.HitoryGacha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HitoryGacha.Location = new System.Drawing.Point(116, 67);
+            this.HitoryGacha.Location = new System.Drawing.Point(12, 64);
             this.HitoryGacha.Name = "HitoryGacha";
             this.HitoryGacha.RowHeadersWidth = 51;
             this.HitoryGacha.RowTemplate.Height = 29;
-            this.HitoryGacha.Size = new System.Drawing.Size(381, 374);
+            this.HitoryGacha.Size = new System.Drawing.Size(462, 374);
             this.HitoryGacha.TabIndex = 0;
             // 
             // TbName
@@ -76,12 +78,24 @@ namespace GameCaro
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(451, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(480, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(115, 48);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(480, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 48);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // HistoryGacha
             // 
@@ -90,6 +104,7 @@ namespace GameCaro
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TbName);
@@ -100,6 +115,7 @@ namespace GameCaro
             this.Load += new System.EventHandler(this.HistoryGacha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HitoryGacha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +127,6 @@ namespace GameCaro
         private System.Windows.Forms.TextBox TbName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

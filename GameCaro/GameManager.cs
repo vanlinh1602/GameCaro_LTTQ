@@ -11,6 +11,7 @@ namespace GameCaro
     class GameManager
     {
         public static DatabaseManager database = new DatabaseManager();
+        public static DateTime time = DateTime.Now;
         public static MediaManager media = new MediaManager();
         public static StartUp ControlStart;
         public static MainGame ControlGame;

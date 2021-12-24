@@ -15,7 +15,9 @@ namespace GameCaro
     public partial class MainGame : Form
     {
         ChessBoardManager ChessBoard;
+        DatabaseManager database = new DatabaseManager();
         Chat formChat;
+        List<string> player = new List<string>();
         Winner formWinner = new Winner();
         Loser formLoser = new Loser();
         Setting setting = new Setting();
@@ -35,7 +37,15 @@ namespace GameCaro
             ChessBoard.GetPointForWiner += ChessBoard_GetPointForWiner;
             CreateNewConnect();
         }
-
+        
+        void AddHistory()
+        {
+            try
+            {
+                database.AddHistory(player[0], player[1]);
+            }
+            catch { }
+        }
         void CreateNewConnect()
         {
             if (!GameManager.isSever)
@@ -212,6 +222,7 @@ namespace GameCaro
             if (e.Winer == 1)
             {
                 PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
+                database.UpdateHistory(player[0], player[1], 1, int.Parse(PointLayer1.Text));
                 if (GameManager.isSever)
                 {
                     ShowFormWin();
@@ -224,6 +235,7 @@ namespace GameCaro
             else
             {
                 PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
+                database.UpdateHistory(player[0], player[1], 2, int.Parse(PointLayer2.Text));
                 if (!GameManager.isSever)
                 {
                     ShowFormWin();
@@ -278,10 +290,15 @@ namespace GameCaro
                 case (int)Socket_Commmad.SETUP_NAME:
                     if (GameManager.isSever){
                         label2.Text = data.Message;
+                        player.Add(GameManager.name);
+                        player.Add(data.Message);
+                        AddHistory();
                     }
                     else
                     {
                         label1.Text = data.Message;
+                        player.Add(data.Message);
+                        player.Add(GameManager.name);
                     }
                     GameManager.chessOpponent = data.Location.X;
                     ChangeAvatar(!GameManager.isSever, data.Location.X);
