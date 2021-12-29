@@ -222,7 +222,11 @@ namespace GameCaro
             if (e.Winer == 1)
             {
                 PointLayer1.Text = (int.Parse(PointLayer1.Text) + 1).ToString();
-                database.UpdateHistory(player[0], player[1], 1, int.Parse(PointLayer1.Text));
+                try
+                {
+                    database.UpdateHistory(player[0], player[1], 1, int.Parse(PointLayer1.Text));
+                }
+                catch{ };
                 if (GameManager.isSever)
                 {
                     ShowFormWin();
@@ -235,7 +239,11 @@ namespace GameCaro
             else
             {
                 PointLayer2.Text = (int.Parse(PointLayer2.Text) + 1).ToString();
-                database.UpdateHistory(player[0], player[1], 2, int.Parse(PointLayer2.Text));
+                try
+                {
+                    database.UpdateHistory(player[0], player[1], 2, int.Parse(PointLayer2.Text));
+                }
+                catch { };
                 if (!GameManager.isSever)
                 {
                     ShowFormWin();
