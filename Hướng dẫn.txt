@@ -1,0 +1,11 @@
+1. Chạy file "SQL GameCaro.sql" trong SQL.
+
+2. Lấy chuỗi connection String từ Visual Studio
+
+	Tools -> Connect to Database -> Microsoft SQL Sever
+      	Chọn sever và database là GameCaro
+  	Vào phần Advanced copy chuỗi Connect String có dạng: "Data Source=......"
+
+3. Thay chuỗi lấy ConnectionString trong file "DatabaseManager.cs"
+
+4. Debug project và chạy game bình thường
